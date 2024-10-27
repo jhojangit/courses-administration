@@ -2,6 +2,7 @@ import React from 'react'
 import Home from '../../components/home/Home'
 
 import CourseDetails from '../../components/CourseDetails/CourseDetails'
+import AdvisorDetails from '../../components/advisorDetails/AdvisorDetails'
 
 
 const HomePage = () => {
@@ -11,6 +12,8 @@ const HomePage = () => {
         <Home/>
         
         <CourseDetails/>
+
+        <AdvisorDetails/>
 
     </div>
   )

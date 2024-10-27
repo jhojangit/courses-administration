@@ -152,7 +152,7 @@ const CourseDetails = () => {
 
             {courseDetails && (
                 <div className="course-details">
-                    <h3 className="course-title">{courseDetails.name}</h3>
+                    <h3 className="course-title"> {courseDetails.name}</h3>
 
                     {/* Planeación */}
                     <h3 onClick={() => toggleSection('planning')} className="section-header">
@@ -308,27 +308,27 @@ const CourseDetails = () => {
                         <div className="section-content">
                             <div className="field-row">
                                 <span className="field-label">Guía de Aprendizaje:</span>
-                                <span className="field-value">{courseDetails.module_3[0]?.guia_aprendaje}</span>
+                                <span className="field-value">{courseDetails.module_2[0]?.guia_aprendaje}</span>
                             </div>
                             <div className="field-row">
                                 <span className="field-label">Recursos Externos:</span>
-                                <span className="field-value">{courseDetails.module_3[0]?.recursos_externos}</span>
+                                <span className="field-value">{courseDetails.module_2[0]?.recursos_externos}</span>
                             </div>
                             <div className="field-row">
                                 <span className="field-label">Recursos Propios:</span>
-                                <span className="field-value">{courseDetails.module_3[0]?.recursos_propios}</span>
+                                <span className="field-value">{courseDetails.module_2[0]?.recursos_propios}</span>
                             </div>
                             <div className="field-row">
                                 <span className="field-label">Actividades:</span>
-                                <span className="field-value">{courseDetails.module_3[0]?.actividades}</span>
+                                <span className="field-value">{courseDetails.module_2[0]?.actividades}</span>
                             </div>
                             <div className="field-row">
                                 <span className="field-label">Rúbricas:</span>
-                                <span className="field-value">{courseDetails.module_3[0]?.rubricas}</span>
+                                <span className="field-value">{courseDetails.module_2[0]?.rubricas}</span>
                             </div>
                             <div className="field-row">
                                 <span className="field-label">Evaluación:</span>
-                                <span className="field-value">{courseDetails.module_3[0]?.evaluacion}</span>
+                                <span className="field-value">{courseDetails.module_2[0]?.evaluacion}</span>
                             </div>
                         </div>
                     )}
@@ -343,27 +343,27 @@ const CourseDetails = () => {
                         <div className="section-content">
                             <div className="field-row">
                                 <span className="field-label">Guía de Aprendizaje:</span>
-                                <span className="field-value">{courseDetails.module_4[0]?.guia_aprendaje}</span>
+                                <span className="field-value">{courseDetails.module_2[0]?.guia_aprendaje}</span>
                             </div>
                             <div className="field-row">
                                 <span className="field-label">Recursos Externos:</span>
-                                <span className="field-value">{courseDetails.module_4[0]?.recursos_externos}</span>
+                                <span className="field-value">{courseDetails.module_2[0]?.recursos_externos}</span>
                             </div>
                             <div className="field-row">
                                 <span className="field-label">Recursos Propios:</span>
-                                <span className="field-value">{courseDetails.module_4[0]?.recursos_propios}</span>
+                                <span className="field-value">{courseDetails.module_2[0]?.recursos_propios}</span>
                             </div>
                             <div className="field-row">
                                 <span className="field-label">Actividades:</span>
-                                <span className="field-value">{courseDetails.module_4[0]?.actividades}</span>
+                                <span className="field-value">{courseDetails.module_2[0]?.actividades}</span>
                             </div>
                             <div className="field-row">
                                 <span className="field-label">Rúbricas:</span>
-                                <span className="field-value">{courseDetails.module_4[0]?.rubricas}</span>
+                                <span className="field-value">{courseDetails.module_2[0]?.rubricas}</span>
                             </div>
                             <div className="field-row">
                                 <span className="field-label">Evaluación:</span>
-                                <span className="field-value">{courseDetails.module_4[0]?.evaluacion}</span>
+                                <span className="field-value">{courseDetails.module_2[0]?.evaluacion}</span>
                             </div>
                         </div>
                     )}
@@ -373,7 +373,6 @@ const CourseDetails = () => {
                     <h3 onClick={() => toggleSection('closing')} className="section-header">
                         Cierre
                     </h3>
-
                     {expandedSections.closing && (
                         <div className="section-content">
                             <div className="field-row">
