@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { supabase } from '../../supabase/supabaseClient';
 import FormPlanning from '../../components/formPlanning/FormPlanning';
-import FormStart from '../../components/FormStart/FormStart';
+import FormStart from '../../components/formStart/FormStart';
 import FormCreateModuleOne from '../../components/FormCreateModuleOne/FormCreateModuleOne';
 
 import './FormCreatePhases_page.css'; 
