@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { supabase } from '../../supabase/supabaseClient';
+import { supabase } from '../../../supabase/supabaseClient';
 import './FormCreateAdvisor.css'; 
 
 const FormCreateAdvisor = () => {

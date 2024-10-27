@@ -21,7 +21,7 @@ const FormCreateModuleFour = ({ moduleFourData, onModuleFourChange }) => {
                     type="text"
                     id="guia_aprendizaje"
                     name="guia_aprendizaje"
-                    value={moduleFourData.guia_aprendizaje}
+                    value={moduleFourData.guia_aprendizaje  || ""}
                     onChange={handleChange}
                     required
                 />
@@ -34,7 +34,7 @@ const FormCreateModuleFour = ({ moduleFourData, onModuleFourChange }) => {
                     type="text"
                     id="recursos_externos"
                     name="recursos_externos"
-                    value={moduleFourData.recursos_externos}
+                    value={moduleFourData.recursos_externos  || ""}
                     onChange={handleChange}
                     required
                 />
@@ -47,7 +47,7 @@ const FormCreateModuleFour = ({ moduleFourData, onModuleFourChange }) => {
                     type="text"
                     id="recursos_propios"
                     name="recursos_propios"
-                    value={moduleFourData.recursos_propios}
+                    value={moduleFourData.recursos_propios  || ""}
                     onChange={handleChange}
                     required
                 />
@@ -60,7 +60,7 @@ const FormCreateModuleFour = ({ moduleFourData, onModuleFourChange }) => {
                     type="text"
                     id="actividades"
                     name="actividades"
-                    value={moduleFourData.actividades}
+                    value={moduleFourData.actividades  || ""}
                     onChange={handleChange}
                     required
                 />
@@ -73,7 +73,7 @@ const FormCreateModuleFour = ({ moduleFourData, onModuleFourChange }) => {
                     type="text"
                     id="rubricas"
                     name="rubricas"
-                    value={moduleFourData.rubricas}
+                    value={moduleFourData.rubricas  || ""}
                     onChange={handleChange}
                     required
                 />
@@ -86,7 +86,7 @@ const FormCreateModuleFour = ({ moduleFourData, onModuleFourChange }) => {
                     type="text"
                     id="evaluacion"
                     name="evaluacion"
-                    value={moduleFourData.evaluacion}
+                    value={moduleFourData.evaluacion  || ""}
                     onChange={handleChange}
                     required
                 />

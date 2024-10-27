@@ -18,7 +18,7 @@ const FormClosing = ({ closingData, onClosingChange }) => {
                     type="text"
                     id="actividades_cierre"
                     name="actividades_cierre"
-                    value={closingData.actividades_cierre}
+                    value={closingData.actividades_cierre  || ""}
                     onChange={handleChange}
                     required
                 />
@@ -29,7 +29,7 @@ const FormClosing = ({ closingData, onClosingChange }) => {
                     type="text"
                     id="evaluacion_percepcion"
                     name="evaluacion_percepcion"
-                    value={closingData.evaluacion_percepcion}
+                    value={closingData.evaluacion_percepcion  || ""}
                     onChange={handleChange}
                     required
                 />

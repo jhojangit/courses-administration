@@ -2,17 +2,17 @@ import React from 'react';
 
 
 
-const FormCreateModuleTwo = ({ moduleTwoData, onModuleTwoChange }) => {
+const FormCreateModuleThree = ({ moduleThreeData, onModuleThreeChange }) => {
 
     
     const handleChange = (e) => {
         const { name, value } = e.target;
-        onModuleTwoChange(name, value);  
+        onModuleThreeChange(name, value);  
     };
 
     return (
         <form className="form">
-            <h3>Crear Módulo Dos</h3>
+            <h3>Crear Módulo Tres</h3>
 
             {/* Campo: Guía de Aprendizaje */}
             <div className="form-group">
@@ -21,7 +21,7 @@ const FormCreateModuleTwo = ({ moduleTwoData, onModuleTwoChange }) => {
                     type="text"
                     id="guia_aprendizaje"
                     name="guia_aprendizaje"
-                    value={moduleTwoData.guia_aprendizaje}
+                    value={moduleThreeData.guia_aprendizaje  || ""}
                     onChange={handleChange}
                     required
                 />
@@ -34,7 +34,7 @@ const FormCreateModuleTwo = ({ moduleTwoData, onModuleTwoChange }) => {
                     type="text"
                     id="recursos_externos"
                     name="recursos_externos"
-                    value={moduleTwoData.recursos_externos}
+                    value={moduleThreeData.recursos_externos  || ""}
                     onChange={handleChange}
                     required
                 />
@@ -47,7 +47,7 @@ const FormCreateModuleTwo = ({ moduleTwoData, onModuleTwoChange }) => {
                     type="text"
                     id="recursos_propios"
                     name="recursos_propios"
-                    value={moduleTwoData.recursos_propios}
+                    value={moduleThreeData.recursos_propios  || ""}
                     onChange={handleChange}
                     required
                 />
@@ -60,7 +60,7 @@ const FormCreateModuleTwo = ({ moduleTwoData, onModuleTwoChange }) => {
                     type="text"
                     id="actividades"
                     name="actividades"
-                    value={moduleTwoData.actividades}
+                    value={moduleThreeData.actividades  || ""}
                     onChange={handleChange}
                     required
                 />
@@ -73,7 +73,7 @@ const FormCreateModuleTwo = ({ moduleTwoData, onModuleTwoChange }) => {
                     type="text"
                     id="rubricas"
                     name="rubricas"
-                    value={moduleTwoData.rubricas}
+                    value={moduleThreeData.rubricas  || ""}
                     onChange={handleChange}
                     required
                 />
@@ -86,7 +86,7 @@ const FormCreateModuleTwo = ({ moduleTwoData, onModuleTwoChange }) => {
                     type="text"
                     id="evaluacion"
                     name="evaluacion"
-                    value={moduleTwoData.evaluacion}
+                    value={moduleThreeData.evaluacion  || ""}
                     onChange={handleChange}
                     required
                 />
@@ -95,4 +95,4 @@ const FormCreateModuleTwo = ({ moduleTwoData, onModuleTwoChange }) => {
     );
 };
 
-export default FormCreateModuleTwo;
+export default FormCreateModuleThree;
