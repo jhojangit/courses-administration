@@ -25,7 +25,7 @@ const App = () => {
                 <Route 
                     path='*' 
                     element={
-                        <Navigate to='/'/>}
+                        <Navigate to='/login'/>}
                 />
 
             </Routes>
