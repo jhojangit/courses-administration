@@ -1,8 +1,8 @@
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import ProtectedRoute from './components/ProtectedRoute/ProtectedRoute';
+//import ProtectedRoute from './components/ProtectedRoute/ProtectedRoute';
 import LoginPage from './pages/login_page/LoginPage';
-import HomePage from './pages/home_page/HomePage';
+//import HomePage from './pages/home_page/HomePage';
 
 
 
