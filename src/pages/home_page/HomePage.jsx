@@ -4,7 +4,7 @@ import FormCreateAdvisor from '../../components/formCreateAdvisor/FormCreateAdvi
 import FormCreateFaculty from '../../components/formCreateFaculty/FormCreateFaculty'
 import FormCreateProgram from '../../components/formCreateProgram/FormCreateProgram'
 import FormCreateCourse from '../../components/formCreateCourse/FormCreateCourse'
-import FormCreatePhasesPage from '../formCreatePhases_page/FormCreatePhases_page'
+import FormCreatePhasesPage from '../FormCreatePhases_page/FormCreatePhases_page'
 import CourseDetails from '../../components/courseDetails/CourseDetails'
 
 
