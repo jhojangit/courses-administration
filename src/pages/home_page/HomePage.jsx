@@ -5,7 +5,7 @@ import FormCreateFaculty from '../../components/formCreateFaculty/FormCreateFacu
 import FormCreateProgram from '../../components/formCreateProgram/FormCreateProgram'
 import FormCreateCourse from '../../components/formCreateCourse/FormCreateCourse'
 import FormCreatePhasesPage from '../FormCreatePhases_page/FormCreatePhases_page'
-import CourseDetails from '../../components/courseDetails/CourseDetails'
+import CourseDetails from '../../components/CourseDetails/CourseDetails'
 
 
 const HomePage = () => {
