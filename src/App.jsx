@@ -11,10 +11,10 @@ const App = () => {
         <Router>
             <Routes>
 
-                <Route path="/" element={<LoginPage />} />
+                <Route path="/login" element={<LoginPage />} />
 
                 <Route
-                    path="/home"
+                    path="/"
                     element={
                         <ProtectedRoute>
                             <HomePage />
@@ -22,11 +22,15 @@ const App = () => {
                     }
                 />
 
-                <Route path='*' element={<Navigate to='/'/>} />
+                <Route 
+                    path='*' 
+                    element={
+                        <Navigate to='/'/>}
+                />
 
             </Routes>
 
-            
+
         </Router>
     );
 };
