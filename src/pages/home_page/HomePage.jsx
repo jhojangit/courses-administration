@@ -26,9 +26,6 @@ const HomePage = () => {
 
         <FormCreatePhasesPage/>
 
-
-
-
     </div>
   )
 }
