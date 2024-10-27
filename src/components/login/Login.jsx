@@ -18,7 +18,7 @@ const Login = () => {
         const correctPassword = import.meta.env.VITE_PASSWORD_USER; 
 
 
-/*         
+
         if (password === correctPassword) {
             sessionStorage.setItem('isLoggedIn', 'true');
             navigate('/home');
@@ -26,7 +26,7 @@ const Login = () => {
             setShowNotification(true); // Mostrar la notificación de error
         }
 
-*/
+
 
 
     };
