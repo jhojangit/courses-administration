@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { supabase } from '../../supabase/supabaseClient';
-import FormPlanning from '../../components/FormPlanning/FormPlanning';
+import FormPlanning from '../../components/formPlanning/FormPlanning';
 import FormStart from '../../components/FormStart/FormStart';
 import FormCreateModuleOne from '../../components/FormCreateModuleOne/FormCreateModuleOne';
 
