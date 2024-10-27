@@ -1,0 +1,158 @@
+@import url('https://fonts.googleapis.com/css2?family=Marko+One&display=swap');
+
+
+
+:root {
+  --color-background: #0A0A0A;         /* Fondo extremadamente oscuro */
+  --color-surface: #1C1C1C;            /* Superficie oscura con contraste */
+  --color-text: #E0E0E0;               /* Texto claro */
+  --color-primary: #191f25;            /* Color primario (gris azulado muy oscuro) */
+  --color-primary-contrast: #22292c;   /* Color primario de contraste */
+  --color-primary-dark: #14181C;       /* Color primario oscuro */
+  --color-secondary: #A0A0A0;          /* Color secundario (gris claro) */
+  --color-secondary-dark: #8C8C8C;     /* Color secundario oscuro */
+  --color-border: #3C3C3C;             /* Color de borde más oscuro */
+  --color-error: #FF4C4C;              /* Color de error (rojo suave) */
+}
+
+
+/* Estilos generales */
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  font-family: "Marko One", serif;
+
+  background-color: var(--color-primary); /* Uso de variable de color */
+  color: var(--color-text);                   /* Uso de variable de color */
+}
+
+#root {
+  height: 100%;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+h1, h2, h3, h4, h5, h6, p {
+  margin: 0;
+  padding: 0;
+}
+
+/* Estilos para botones */
+
+button {
+
+    background-color: var(--color-text); 
+    color: var(--color-background);
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    width: 100%;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+    font-weight: bold;
+}
+
+button:hover {
+  background-color: var(--color-primary-contrast); 
+  color: var(--color-text-light);
+  font-weight: bold;
+}
+
+
+/* Estilos para inputs */
+input {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid var(--color-secondary);
+  border-radius: 5px;
+  background-color: var(--color-background-light);
+  color: var(--color-text-dark);
+  transition: border 0.3s;
+}
+
+input:focus {
+  border-color: var(--color-primary);
+  outline: none;
+}
+
+
+
+label {
+  display: block;
+  font-size: 14px;
+  color: var(--color-text-light);
+  /* Color claro */
+  margin-bottom: 5px;
+}
+
+
+/*FORM*/
+
+/* Contenedor del formulario */
+.form-container {
+  background-color: var(--color-primary-dark);
+  /* Fondo oscuro elegante */
+  padding: 20px;
+  border-radius: 10px;
+  max-width: 400px;
+  margin: 50px auto;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+/* Estilo general para los inputs */
+.form-group {
+  margin-bottom: 20px;
+}
+
+
+.form-title{
+  text-align: center;
+  color: var(--color-text-light); /* Color de texto claro */
+  margin-bottom: 20px;
+}
+
+.form-message{
+  text-align: center;
+  color: var(--color-secondary);
+  margin-top: 20px;
+}
+
+
+
+/* Estilos para el select */
+select {
+  width: 100%;
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  background-color: var(--color-primary-contrast);
+  color: var(--color-text);
+  font-size: 16px;
+  appearance: none; /* Elimina el estilo predeterminado del navegador */
+  -webkit-appearance: none; /* Safari y Chrome */
+  -moz-appearance: none; /* Firefox */
+  transition: border-color 0.3s ease;
+  outline: none;
+  cursor: pointer;
+}
+
+/* Cambia el borde cuando el select esté enfocado */
+select:focus {
+  border-color: #007BFF; /* Color de borde al enfocar */
+  background-color: var(--color-primary-contrast);
+}
+
+/* Cambiar el color del texto del placeholder en la primera opción */
+select option[value=""] {
+  color: #999; /* Color más claro para el placeholder */
+}
+
+/* Opciones (aunque tienen limitaciones de estilos) */
+option {
+  padding: 10px;
+  background-color: #3d3c3c;
+  color: #f5f5f5;
+}
