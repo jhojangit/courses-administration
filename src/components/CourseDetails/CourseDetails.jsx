@@ -349,7 +349,115 @@ const CourseDetails = ({ advisorId, courseId }) => {
                         </div>
                     )}
 
-                    {/* Repite este patrón para otros módulos y la sección de cierre */}
+
+                    {/* Módulo 2 */}
+                    <h3 onClick={() => toggleSection('module_2')} className="section-header">
+                        Módulo 2
+                    </h3>
+                    {expandedSections.module_2 && (
+                        <div className="section-content">
+                            <div className="field-row">
+                                <span className="field-label">Guía de Aprendizaje:</span>
+                                <span className="field-value">{courseDetails.module_2[0]?.guia_aprendizaje}</span>
+                            </div>
+                            <div className="field-row">
+                                <span className="field-label">Recursos Externos:</span>
+                                <span className="field-value">{courseDetails.module_2[0]?.recursos_externos}</span>
+                            </div>
+                            <div className="field-row">
+                                <span className="field-label">Recursos Propios:</span>
+                                <span className="field-value">{courseDetails.module_2[0]?.recursos_propios}</span>
+                            </div>
+                            <div className="field-row">
+                                <span className="field-label">Actividades:</span>
+                                <span className="field-value">{courseDetails.module_2[0]?.actividades}</span>
+                            </div>
+                            <div className="field-row">
+                                <span className="field-label">Rúbricas:</span>
+                                <span className="field-value">{courseDetails.module_2[0]?.rubricas}</span>
+                            </div>
+                        </div>
+                    )}
+
+
+                    {/* Módulo 3 */}
+                    <h3 onClick={() => toggleSection('module_3')} className="section-header">
+                        Módulo 3
+                    </h3>
+                    {expandedSections.module_3 && (
+                        <div className="section-content">
+                            <div className="field-row">
+                                <span className="field-label">Guía de Aprendizaje:</span>
+                                <span className="field-value">{courseDetails.module_3[0]?.guia_aprendizaje}</span>
+                            </div>
+                            <div className="field-row">
+                                <span className="field-label">Recursos Externos:</span>
+                                <span className="field-value">{courseDetails.module_3[0]?.recursos_externos}</span>
+                            </div>
+                            <div className="field-row">
+                                <span className="field-label">Recursos Propios:</span>
+                                <span className="field-value">{courseDetails.module_3[0]?.recursos_propios}</span>
+                            </div>
+                            <div className="field-row">
+                                <span className="field-label">Actividades:</span>
+                                <span className="field-value">{courseDetails.module_3[0]?.actividades}</span>
+                            </div>
+                            <div className="field-row">
+                                <span className="field-label">Rúbricas:</span>
+                                <span className="field-value">{courseDetails.module_3[0]?.rubricas}</span>
+                            </div>
+                        </div>
+                    )}
+
+
+                    {/* Módulo 4 */}
+                    <h3 onClick={() => toggleSection('module_4')} className="section-header">
+                        Módulo 4
+                    </h3>
+                    {expandedSections.module_4 && (
+                        <div className="section-content">
+                            <div className="field-row">
+                                <span className="field-label">Guía de Aprendizaje:</span>
+                                <span className="field-value">{courseDetails.module_4[0]?.guia_aprendizaje}</span>
+                            </div>
+                            <div className="field-row">
+                                <span className="field-label">Recursos Externos:</span>
+                                <span className="field-value">{courseDetails.module_4[0]?.recursos_externos}</span>
+                            </div>
+                            <div className="field-row">
+                                <span className="field-label">Recursos Propios:</span>
+                                <span className="field-value">{courseDetails.module_4[0]?.recursos_propios}</span>
+                            </div>
+                            <div className="field-row">
+                                <span className="field-label">Actividades:</span>
+                                <span className="field-value">{courseDetails.module_4[0]?.actividades}</span>
+                            </div>
+                            <div className="field-row">
+                                <span className="field-label">Rúbricas:</span>
+                                <span className="field-value">{courseDetails.module_4[0]?.rubricas}</span>
+                            </div>
+                        </div>
+                    )}
+
+
+                    {/* Closing */}
+                    <h3 onClick={() => toggleSection('closing')} className="section-header">
+                        Cierre
+                    </h3>
+                    {expandedSections.closing && (
+                        <div className="section-content">
+                            <div className="field-row">
+                                <span className="field-label">Actividades de Cierre:</span>
+                                <span className="field-value">{courseDetails.closing[0]?.actividades_cierre}</span>
+                            </div>
+                            <div className="field-row">
+                                <span className="field-label">Evaluación de percepción:</span>
+                                <span className="field-value">{courseDetails.closing[0]?.evaluacion_percepcion}</span>
+                            </div>
+                        </div>
+                    )}
+
+                    
                 </div>
             )}
         </div>

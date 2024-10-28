@@ -16,9 +16,9 @@ const HomePage = () => {
 
         <Home/>
         
-{/*         <CourseDetails/> */}
+        <CourseDetails/> 
 
-        <AdvisorDetails/>
+        {/* <AdvisorDetails/> */}
 
 
 
