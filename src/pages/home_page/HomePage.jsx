@@ -30,7 +30,7 @@ const HomePage = () => {
 
 
 
-{/* 
+
         <FormCreateAdvisor/>
 
         <FormCreateFaculty/>
@@ -40,7 +40,7 @@ const HomePage = () => {
         <FormCreateCourse/>
 
         <FormCreatePhasesPage/> 
- */}
+
 
     </div>
   )

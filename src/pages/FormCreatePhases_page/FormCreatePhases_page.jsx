@@ -310,7 +310,7 @@ const FormCreatePhasesPage = () => {
 
     return (
         <div className="form-create-phases-container">
-            <h2 className="form-title">Crear/Editar Planeación y Sección de Inicio</h2>
+            <h2 className="form-title">Crear / Editar </h2>
 
             <div className="form-group">
                 <label htmlFor="courseId">Selecciona un Curso</label>
@@ -364,7 +364,7 @@ const FormCreatePhasesPage = () => {
             )}
 
             <button onClick={handleSubmit} className="submit-button">
-                Guardar Planeación y Sección de Inicio
+                Guardar / Actualizar
             </button>
 
             {message && <p className="form-message">{message}</p>}
