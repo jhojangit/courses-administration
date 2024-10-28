@@ -8,6 +8,8 @@ import FormCreateCourse from '../../components/forms/formCreateCourse/FormCreate
 import FormCreateAdvisor from '../../components/forms/formCreateAdvisor/FormCreateAdvisor'
 import FormCreateFaculty from '../../components/forms/formCreateFaculty/FormCreateFaculty'
 import FormCreateProgram from '../../components/forms/formCreateProgram/FormCreateProgram'
+import FacultyDetails from '../../components/facultyDetails/FacultyDetails'
+import ProgramDetails from '../../components/programDetails/ProgramDetails'
 
 
 const HomePage = () => {
@@ -15,10 +17,15 @@ const HomePage = () => {
     <div>
 
         <Home/>
-        
-        <CourseDetails/> 
 
-        {/* <AdvisorDetails/> */}
+        <AdvisorDetails/>
+        
+        <FacultyDetails/>
+
+        <ProgramDetails/>
+
+        <CourseDetails/>  
+
 
 
 
@@ -32,9 +39,8 @@ const HomePage = () => {
 
         <FormCreateCourse/>
 
-
         <FormCreatePhasesPage/> 
-*/}
+ */}
 
     </div>
   )
