@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { supabase } from '../../supabase/supabaseClient';
 import CourseDetails from '../CourseDetails/CourseDetails';
-import './advisorDetails.css';
+import './AdvisorDetails.css';
 
 const AdvisorsDetails = () => {
     const [advisors, setAdvisors] = useState([]);
