@@ -1,5 +1,4 @@
-
-.course-details-container {
+.advisor-details-container {
     max-width: 800px;
     margin: 0 auto;
     padding: 20px;
@@ -8,17 +7,19 @@
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
 }
 
-.course-select {
+
+.advisor-select {
     margin-bottom: 30px;
 }
 
-.course-title {
+
+.advisor-title {
     font-size: 1.5em;
     font-weight: bold;
     color: var(--color-text);
 }
 
-.section-header {
+.advisor-section-header {
     cursor: pointer;
     font-weight: bold;
     padding: 10px;
@@ -29,11 +30,11 @@
     transition: background-color 0.3s;
 }
 
-.section-header:hover {
+.advisor-section-header:hover {
     background-color: var(--color-primary-contrast);
 }
 
-.section-content {
+.advisor-section-content {
     padding: 10px 20px;
     background-color: var(--color-primary);
     border-radius: 5px;
@@ -41,22 +42,23 @@
     margin-bottom: 15px;
 }
 
-.field-row {
+.advisor-field-row {
     display: flex;
     justify-content: space-between;
     padding: 5px 0;
     border-bottom: 1px solid var(--color-primary-contrast);
 }
 
-.field-label {
+.advisor-field-label {
     font-weight: bold;
     color: var(--color-text);
     flex: 1;
     text-align: left;
 }
 
-.field-value {
+.advisor-field-value {
     flex: 2;
     text-align: right;
-    color: var(--color-secondary);
+    color: var(--color-text);
+    cursor: pointer;
 }

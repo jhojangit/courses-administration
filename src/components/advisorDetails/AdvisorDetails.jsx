@@ -1,11 +1,13 @@
 import React, { useState, useEffect } from 'react';
 import { supabase } from '../../supabase/supabaseClient';
-import '../CourseDetails/CourseDetails.css';
+import CourseDetails from '../CourseDetails/CourseDetails';
+import '../AdvisorDetails/AdvisorDetails.css';
 
 const AdvisorsDetails = () => {
     const [advisors, setAdvisors] = useState([]);
     const [selectedAdvisor, setSelectedAdvisor] = useState('');
     const [advisorDetails, setAdvisorDetails] = useState(null);
+    const [selectedCourseId, setSelectedCourseId] = useState(null);
 
     // Fetch de los asesores disponibles
     useEffect(() => {
@@ -24,7 +26,7 @@ const AdvisorsDetails = () => {
         fetchAdvisors();
     }, []);
 
-    // Fetch de los detalles del asesor seleccionado
+    // Fetch de los detalles del asesor y sus cursos
     const fetchAdvisorDetails = async (advisorId) => {
         const { data, error } = await supabase
             .from('advisors')
@@ -32,6 +34,7 @@ const AdvisorsDetails = () => {
                 name,
                 email,
                 courses (
+                    id,
                     name,
                     credits,
                     teacher,
@@ -48,6 +51,12 @@ const AdvisorsDetails = () => {
             console.error('Error fetching advisor details:', error);
         } else {
             setAdvisorDetails(data);
+
+            if (data.courses && data.courses.length > 0) {
+                setSelectedCourseId(data.courses[0].id); // Mostrar automáticamente el primer curso
+            } else {
+                setSelectedCourseId(null);
+            }
         }
     };
 
@@ -55,36 +64,49 @@ const AdvisorsDetails = () => {
     const handleAdvisorChange = (e) => {
         const advisorId = e.target.value;
         setSelectedAdvisor(advisorId);
+        setSelectedCourseId(null);
         if (advisorId) {
-            fetchAdvisorDetails(advisorId); // Fetch de los detalles del asesor seleccionado
+            fetchAdvisorDetails(advisorId);
+        } else {
+            setAdvisorDetails(null); // Resetear detalles si no se selecciona asesor
         }
     };
 
     return (
-        <div className="course-details-container">
+        <div className="advisor-details-container">
             <h2>Selecciona un asesor</h2>
-            <select value={selectedAdvisor} onChange={handleAdvisorChange} className="course-select">
+            <select value={selectedAdvisor} onChange={handleAdvisorChange} className="advisor-select">
                 <option value="">Seleccione un asesor</option>
                 {advisors.map((advisor) => (
-                    <option key={advisor.name} value={advisor.id}>
+                    <option key={advisor.id} value={advisor.id}>
                         {advisor.name}
                     </option>
                 ))}
             </select>
 
             {advisorDetails && (
-                <div className="course-details">
-                    <h3 className="course-title"> {advisorDetails.email}</h3>
-
+                <div className="advisor-details">
+                    <h3>{advisorDetails.name}</h3>
+                    <h4>{advisorDetails.email}</h4>
 
                     <h4>Cursos Asignados</h4>
                     {advisorDetails.courses.map(course => (
-                        <div key={course.id} className="field-row">
-                            <span className="field-label">Curso:</span>
-                            <span className="field-value">{course.name} (Créditos: {course.credits}, Docente: {course.teacher})</span>
+                        <div key={course.id} className="advisor-field-row">
+                            <span className="advisor-field-label">Curso:</span>
+                            <span 
+                                className="advisor-field-value" 
+                                onClick={() => setSelectedCourseId(course.id)}
+                                style={{ cursor: 'pointer' }}
+                            >
+                                {course.name} (Facultad: {course.program_id.faculty_id.name})
+                            </span>
                         </div>
                     ))}
                 </div>
+            )}
+
+            {selectedCourseId && (
+                <CourseDetails advisorId={selectedAdvisor} courseId={selectedCourseId} />
             )}
         </div>
     );
