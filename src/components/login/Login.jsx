@@ -21,7 +21,7 @@ const Login = () => {
 
         if (password === correctPassword) {
             sessionStorage.setItem('isLoggedIn', 'true');
-            navigate('/home');
+            navigate('/');
         } else {
             setShowNotification(true); // Mostrar la notificación de error
         }
