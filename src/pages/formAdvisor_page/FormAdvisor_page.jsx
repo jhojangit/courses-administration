@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import FormCreateAdvisor from '../../components/forms/formCreateAdvisor/FormCreateAdvisor';
 import FormUpdateAdvisor from '../../components/forms/formUpdateAdvisor/FormUpdateAdvisor';
 import FormDeleteAdvisor from '../../components/forms/formDeleteAdvisor/FormDeleteAdvisor';
-import './FormCreateAdvisor_page.css';
+import './FormAdvisor_page.css';
 
 const FormCreateAdvisorPage = () => {
     const [visibleForm, setVisibleForm] = useState(null);

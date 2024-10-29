@@ -28,7 +28,7 @@ const AsideMenu = () => {
                 <nav className="menu-links">
                     <ul>
                         <li><Link to="/" onClick={handleLinkClick}>Inicio</Link></li>
-                        <li><Link to="/createadvisor" onClick={handleLinkClick}>Asesores</Link></li>
+                        <li><Link to="/advisorpage" onClick={handleLinkClick}>Asesores</Link></li>
                         <li><Link to="/createcourse" onClick={handleLinkClick}>Cursos</Link></li>
                         <li><Link to="/createprogram" onClick={handleLinkClick}>Programas</Link></li>
                         <li><Link to="/createfaculty" onClick={handleLinkClick}>Facultades</Link></li>

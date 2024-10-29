@@ -5,12 +5,11 @@ import ProtectedRoute from './components/protectedRoute/ProtectedRoute';
 import ProtectedLayout from './components/protectedLayout/ProtectedLayout';
 import LoginPage from './pages/login_page/LoginPage';
 import HomePage from './pages/home_page/HomePage';
-import FormCreateAdvisor from './components/forms/formCreateAdvisor/FormCreateAdvisor';
 import FormCreateCourse from './components/forms/formCreateCourse/FormCreateCourse';
 import FormCreateFaculty from './pages/formCreateFaculty_page/FormCreateFaculty_page';
 import FormCreatePhasesPage from './pages/FormCreatePhases_page/FormCreatePhases_page';
 import FormCreateProgram from './components/forms/formCreateProgram/FormCreateProgram';
-import FormCreateAdvisor_page from './pages/formCreateAdvisor_page/FormCreateAdvisor_page';
+import FormAdvisor_page from './pages/formAdvisor_page/FormAdvisor_page';
 
 const App = () => {
     return (
@@ -30,11 +29,11 @@ const App = () => {
                 />
                 
                 <Route
-                    path="/createadvisor"
+                    path="/advisorpage"
                     element={
                         <ProtectedRoute>
                             <ProtectedLayout>
-                                <FormCreateAdvisor_page />
+                                <FormAdvisor_page />
                             </ProtectedLayout>
                         </ProtectedRoute>
                     }
