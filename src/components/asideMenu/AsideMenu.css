@@ -1,0 +1,69 @@
+/* Mantiene el estilo general del menú */
+.aside-menu {
+    position: fixed;
+    width: 200px;
+    padding: 10px;
+    background-color: var(--color-primary-dark);
+    transition: transform 0.3s ease;
+    top: 0;
+    left: 0;
+    height: 100%;
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
+    z-index: 1000; /* Asegura que el menú esté al frente */
+}
+
+.aside-menu.hidden {
+    transform: translateX(-100%); /* Oculta el menú */
+}
+
+.aside-menu.visible {
+    transform: translateX(0); /* Muestra el menú */
+}
+
+/* Botón de alternar */
+.menu-toggle-button {
+    position: absolute;
+    width: 30px;
+    top: 20px;
+    right: -40px;
+    padding: 5px 8px;
+    font-size: 16px;
+    background-color: var(--color-text);
+    color: var(--color-primary-dark);
+    border: none;
+    border-radius: 1rem;
+    cursor: pointer;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+/* Efecto al pasar el ratón por el botón */
+.menu-toggle-button:hover {
+    background-color: var(--color-secondary-dark);
+}
+
+/* Lista de enlaces */
+.menu-links ul {
+    list-style-type: none;
+    padding: 0;
+    margin-top: 50px;
+    width: 190px;
+}
+
+.menu-links li {
+    margin: 10px 0;
+}
+
+.menu-links a {
+    text-decoration: none;
+    color: var(--color-text);
+}
+
+/* Efecto en cada enlace al pasar el ratón */
+.menu-links li:hover {
+    background-color: var(--color-secondary-dark);
+    color: var(--color-text);
+    border-radius: 0.5rem;
+
+}

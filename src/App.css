@@ -10,7 +10,7 @@
   --color-primary-contrast: #22292c;   /* Color primario de contraste */
   --color-primary-dark: #14181C;       /* Color primario oscuro */
   --color-secondary: #A0A0A0;          /* Color secundario (gris claro) */
-  --color-secondary-dark: #8C8C8C;     /* Color secundario oscuro */
+  --color-secondary-dark: #6d6b6b;     /* Color secundario oscuro */
   --color-border: #3C3C3C;             /* Color de borde más oscuro */
   --color-error: #FF4C4C;              /* Color de error (rojo suave) */
 }

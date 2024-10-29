@@ -3,13 +3,9 @@ import Home from '../../components/home/Home'
 
 import CourseDetails from '../../components/CourseDetails/CourseDetails'
 import AdvisorDetails from '../../components/advisorDetails/AdvisorDetails'
-import FormCreatePhasesPage from '../FormCreatePhases_page/FormCreatePhases_page'
-import FormCreateCourse from '../../components/forms/formCreateCourse/FormCreateCourse'
-import FormCreateAdvisor from '../../components/forms/formCreateAdvisor/FormCreateAdvisor'
-import FormCreateFaculty from '../../components/forms/formCreateFaculty/FormCreateFaculty'
-import FormCreateProgram from '../../components/forms/formCreateProgram/FormCreateProgram'
 import FacultyDetails from '../../components/facultyDetails/FacultyDetails'
 import ProgramDetails from '../../components/programDetails/ProgramDetails'
+import AsideMenu from '../../components/asideMenu/AsideMenu'
 
 
 const HomePage = () => {
@@ -17,6 +13,9 @@ const HomePage = () => {
     <div>
 
         <Home/>
+
+        <AsideMenu/>
+
 
         <AdvisorDetails/>
         
@@ -29,17 +28,6 @@ const HomePage = () => {
 
 
 
-
-
-        <FormCreateAdvisor/>
-
-        <FormCreateFaculty/>
-
-        <FormCreateProgram/>
-
-        <FormCreateCourse/>
-
-        <FormCreatePhasesPage/> 
 
 
     </div>
