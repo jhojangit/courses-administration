@@ -6,7 +6,7 @@ import { Navigate } from 'react-router-dom';
 const CourseDetails = ({ advisorId, courseId }) => {
     const [courses, setCourses] = useState([]);
     const [selectedCourseId, setSelectedCourseId] = useState('');
-    const [courseDetails, setCourseDetails] = useState(null);
+    const [courseDetails, setCourseDetails] = useState(false);
     const [redirect, setRedirect] = useState(false);
 
     const [expandedSections, setExpandedSections] = useState({

@@ -110,6 +110,10 @@ const FacultyDetails = () => {
                 ))}
             </select>
 
+            <br />
+            <br />
+            <br />
+
             {programs.length > 0 && (
                 <>
                     <h3>Selecciona un Programa</h3>
@@ -134,7 +138,7 @@ const FacultyDetails = () => {
                                 onClick={() => setSelectedCourseId(course.id)}
                                 style={{ cursor: 'pointer' }}
                             >
-                                {course.name} (Créditos: {course.credits})
+                                {course.name} 
                             </span>
                         </div>
                     ))}

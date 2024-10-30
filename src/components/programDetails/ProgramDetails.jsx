@@ -77,7 +77,7 @@ const ProgramDetails = () => {
                                 onClick={() => setSelectedCourseId(course.id)}
                                 style={{ cursor: 'pointer' }}
                             >
-                                {course.name}
+                                {course.name} 
                             </span>
                         </div>
                     ))}

@@ -5,13 +5,13 @@
 :root {
   --color-background: #0A0A0A;         /* Fondo extremadamente oscuro */
   --color-surface: #1C1C1C;            /* Superficie oscura con contraste */
-  --color-text: #E0E0E0;               /* Texto claro */
+  --color-text: #f0efef;               /* Texto claro */
   --color-primary: #191f25;            /* Color primario (gris azulado muy oscuro) */
   --color-primary-contrast: #22292c;   /* Color primario de contraste */
   --color-primary-dark: #14181C;       /* Color primario oscuro */
   --color-secondary: #A0A0A0;          /* Color secundario (gris claro) */
   --color-secondary-dark: #6d6b6b;     /* Color secundario oscuro */
-  --color-border: #3C3C3C;             /* Color de borde más oscuro */
+  --color-border: #4E5D75;             /* Color de borde más oscuro */
   --color-error: #FF4C4C;              /* Color de error (rojo suave) */
   --color-success: #65d177;              /* Color de error (rojo suave) */
 }
