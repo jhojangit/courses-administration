@@ -15,24 +15,27 @@ const FormCreateProgram_page = () => {
         <div className="form-page-container">
 
             <h1>PROGRAMAS</h1>
-            <div className="form-page-buttons ">
+            <div className="form-page-buttons">
                 <button 
                     onClick={() => toggleForm('create')} 
-                    className={`form-page-toggle-button ${visibleForm === 'create' ? 'active' : ''}`}
-                >
-                    Crear Programa
+                    className={`form-page-toggle-button ${visibleForm === 'create' ? 'active' : ''}`}>
+                    Crear
+                    <br />
+                    <i class='bx bx-layer-plus bx-md'></i>
                 </button>
                 <button 
                     onClick={() => toggleForm('update')} 
-                    className={`form-page-toggle-button ${visibleForm === 'update' ? 'active' : ''}`}
-                >
-                    Actualizar Programa
+                    className={`form-page-toggle-button ${visibleForm === 'update' ? 'active' : ''}`}>
+                    Actualizar
+                    <br />
+                    <i class='bx bxs-edit bx-md'></i>
                 </button>
                 <button 
                     onClick={() => toggleForm('delete')} 
-                    className={`form-page-toggle-button ${visibleForm === 'delete' ? 'active' : ''}`}
-                >
-                    Eliminar Programa
+                    className={`form-page-toggle-button ${visibleForm === 'delete' ? 'active' : ''}`}>
+                    Eliminar
+                    <br />
+                    <i class='bx bx-layer-minus bx-md'></i>
                 </button>
             </div>
 

@@ -19,17 +19,23 @@ const FormCreateFacultyPage = () => {
                 <button 
                     onClick={() => toggleForm('create')} 
                     className={`form-page-toggle-button ${visibleForm === 'create' ? 'active' : ''}`}>
-                    Crear Facultad
+                    Crear
+                    <br />
+                    <i class='bx bx-layer-plus bx-md'></i>
                 </button>
                 <button 
                     onClick={() => toggleForm('update')} 
                     className={`form-page-toggle-button ${visibleForm === 'update' ? 'active' : ''}`}>
-                    Actualizar Facultad
+                    Actualizar
+                    <br />
+                    <i class='bx bxs-edit bx-md'></i>
                 </button>
                 <button 
                     onClick={() => toggleForm('delete')} 
                     className={`form-page-toggle-button ${visibleForm === 'delete' ? 'active' : ''}`}>
-                    Eliminar Facultad
+                    Eliminar
+                    <br />
+                    <i class='bx bx-layer-minus bx-md'></i>
                 </button>
             </div>
 

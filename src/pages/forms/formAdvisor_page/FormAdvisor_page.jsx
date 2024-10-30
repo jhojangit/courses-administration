@@ -17,21 +17,30 @@ const FormCreateAdvisorPage = () => {
 
             <h1>ASESORES</h1>
             <div className="form-page-buttons">
-                <button
-                    onClick={() => toggleForm('create')}
+                <button 
+                    onClick={() => toggleForm('create')} 
                     className={`form-page-toggle-button ${visibleForm === 'create' ? 'active' : ''}`}>
-                    Crear Asesor
+                    Crear
+                    <br />
+                    <i class='bx bx-user-plus bx-md'></i>
                 </button>
-                <button
-                    onClick={() => toggleForm('update')}
+
+                <button 
+                    onClick={() => toggleForm('update')} 
                     className={`form-page-toggle-button ${visibleForm === 'update' ? 'active' : ''}`}>
-                    Actualizar Asesor
+                    Actualizar
+                    <br />
+                    <i class='bx bxs-edit bx-md'></i>
                 </button>
-                <button
-                    onClick={() => toggleForm('delete')}
+
+                <button 
+                    onClick={() => toggleForm('delete')} 
                     className={`form-page-toggle-button ${visibleForm === 'delete' ? 'active' : ''}`}>
-                    Eliminar Asesor
+                    Eliminar
+                    <br />
+                    <i class='bx bx-user-minus bx-md'></i>
                 </button>
+                
             </div>
 
             <div className="form-container-options">
