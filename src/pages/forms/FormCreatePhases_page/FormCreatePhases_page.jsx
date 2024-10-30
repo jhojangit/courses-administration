@@ -63,7 +63,6 @@ const FormCreatePhasesPage = () => {
 
 
 
-
     useEffect(() => {
         const fetchCourses = async () => {
             const { data, error } = await supabase.from('courses').select('*');

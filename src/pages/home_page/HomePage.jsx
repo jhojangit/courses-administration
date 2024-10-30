@@ -1,11 +1,9 @@
 import React from 'react'
 import Home from '../../components/home/Home'
+import Filter_page from '../filter_page/Filter_page'
 
-import CourseDetails from '../../components/CourseDetails/CourseDetails'
-import AdvisorDetails from '../../components/advisorDetails/AdvisorDetails'
-import FacultyDetails from '../../components/facultyDetails/FacultyDetails'
-import ProgramDetails from '../../components/programDetails/ProgramDetails'
-import AsideMenu from '../../components/asideMenu/AsideMenu'
+
+
 
 
 const HomePage = () => {
@@ -14,20 +12,7 @@ const HomePage = () => {
 
         <Home/>
 
-        <AsideMenu/>
-
-
-        <AdvisorDetails/>
-        
-        <FacultyDetails/>
-
-        <ProgramDetails/>
-
-        <CourseDetails/>  
-
-
-
-
+        <Filter_page/>
 
 
     </div>
