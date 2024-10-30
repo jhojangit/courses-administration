@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import './AsideMenu.css';
 
@@ -15,7 +15,7 @@ const AsideMenu = () => {
     };
 
     // Cierra el menú si la ubicación cambia
-    React.useEffect(() => {
+    useEffect(() => {
         setIsVisible(false);
     }, [location]);
 
@@ -28,10 +28,10 @@ const AsideMenu = () => {
                 <nav className="menu-links">
                     <ul>
                         <li><Link to="/" onClick={handleLinkClick}>Inicio</Link></li>
+                        <li><Link to="/facultypage" onClick={handleLinkClick}>Facultades</Link></li>
+                        <li><Link to="/programpage" onClick={handleLinkClick}>Programas</Link></li>
+                        <li><Link to="/coursepage" onClick={handleLinkClick}>Cursos</Link></li>
                         <li><Link to="/advisorpage" onClick={handleLinkClick}>Asesores</Link></li>
-                        <li><Link to="/createcourse" onClick={handleLinkClick}>Cursos</Link></li>
-                        <li><Link to="/createprogram" onClick={handleLinkClick}>Programas</Link></li>
-                        <li><Link to="/createfaculty" onClick={handleLinkClick}>Facultades</Link></li>
                     </ul>
                 </nav>
             )}

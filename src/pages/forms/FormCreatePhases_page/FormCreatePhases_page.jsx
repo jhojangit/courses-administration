@@ -1,14 +1,14 @@
 import React, { useState, useEffect } from 'react';
-import { supabase } from '../../supabase/supabaseClient';
-import FormPlanning from '../../components/forms/formPlanning/FormPlanning';
-import FormStart from '../../components/forms/formStart/FormStart';
-import FormCreateModuleOne from '../../components/forms/FormCreateModuleOne/FormCreateModuleOne';
-import FormCreateModuleTwo from '../../components/forms/formCreateModuleTwo/FormCreateModuleTwo';
-import FormCreateModuleThree from '../../components/forms/formCreateModuleThree/FormCreateModuleThree';
-import FormCreateModuleFour from '../../components/forms/formCreateModuleFour/FormCreateModuleFour';
-import FormClosing from '../../components/forms/formClosing/FormClosing';
+import { supabase } from '../../../supabase/supabaseClient';
+import FormPlanning from '../../../components/forms/formPlanning/FormPlanning';
+import FormStart from '../../../components/forms/formStart/FormStart';
+import FormCreateModuleOne from '../../../components/forms/FormCreateModuleOne/FormCreateModuleOne';
+import FormCreateModuleTwo from '../../../components/forms/formCreateModuleTwo/FormCreateModuleTwo';
+import FormCreateModuleThree from '../../../components/forms/formCreateModuleThree/FormCreateModuleThree';
+import FormCreateModuleFour from '../../../components/forms/formCreateModuleFour/FormCreateModuleFour';
+import FormClosing from '../../../components/forms/formClosing/FormClosing';
 
-import './FormCreatePhases_page.css'; 
+
 
 
 

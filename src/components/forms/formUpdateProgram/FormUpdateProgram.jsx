@@ -1,48 +1,90 @@
 import React, { useState, useEffect } from 'react';
 import { supabase } from '../../../supabase/supabaseClient';
 
-const FormCreateProgram = () => {
+
+const FormUpdateProgram = () => {
+    const [programs, setPrograms] = useState([]);
+    const [selectedProgramId, setSelectedProgramId] = useState('');
     const [programName, setProgramName] = useState('');
     const [coordinator, setCoordinator] = useState('');
     const [coordinatorEmail, setCoordinatorEmail] = useState('');
     const [facultyId, setFacultyId] = useState('');
-    const [faculties, setFaculties] = useState([]); 
+    const [faculties, setFaculties] = useState([]);
     const [message, setMessage] = useState('');
 
-    // Obtener las facultades de la tabla 'faculties' en Supabase al cargar el componente
+    // Obtener las facultades y programas de la base de datos al cargar el componente
     useEffect(() => {
-        const fetchFaculties = async () => {
-            const { data, error } = await supabase
+        const fetchFacultiesAndPrograms = async () => {
+            const { data: facultiesData, error: facultiesError } = await supabase
                 .from('faculties')
                 .select('*');
 
-            if (error) {
-                console.error('Error fetching faculties:', error);
+            if (facultiesError) {
+                console.error('Error fetching faculties:', facultiesError);
             } else {
-                setFaculties(data);
+                setFaculties(facultiesData);
+            }
+
+            const { data: programsData, error: programsError } = await supabase
+                .from('programs')
+                .select('*');
+
+            if (programsError) {
+                console.error('Error fetching programs:', programsError);
+            } else {
+                setPrograms(programsData);
             }
         };
 
-        fetchFaculties();
+        fetchFacultiesAndPrograms();
     }, []);
+
+    const handleProgramSelect = async (e) => {
+        const id = e.target.value;
+        setSelectedProgramId(id);
+
+        if (id) {
+            const { data: programData, error } = await supabase
+                .from('programs')
+                .select('*')
+                .eq('id', id)
+                .single();
+
+            if (error) {
+                console.error('Error fetching program:', error);
+            } else {
+                setProgramName(programData.name);
+                setCoordinator(programData.coordinator);
+                setCoordinatorEmail(programData.email);
+                setFacultyId(programData.faculty_id);
+            }
+        } else {
+            setProgramName('');
+            setCoordinator('');
+            setCoordinatorEmail('');
+            setFacultyId('');
+        }
+    };
 
     const handleSubmit = async (e) => {
         e.preventDefault();
 
         const { data, error } = await supabase
             .from('programs')
-            .insert([{ 
+            .update({ 
                 name: programName, 
                 coordinator: coordinator, 
-                email: coordinatorEmail,
+                email: coordinatorEmail, 
                 faculty_id: facultyId 
-            }]);
+            })
+            .eq('id', selectedProgramId);
 
         if (error) {
             console.error(error);
-            setMessage('Error creando el Programa.');
+            setMessage('Error actualizando el Programa.');
         } else {
-            setMessage('Programa creado exitosamente.');
+            setMessage('Programa actualizado exitosamente.');
+            setSelectedProgramId('');
             setProgramName(''); 
             setCoordinator(''); 
             setCoordinatorEmail('');
@@ -56,7 +98,25 @@ const FormCreateProgram = () => {
 
     return (
         <div className="form-container">
-            <h2 className='form-title'>Crear Programa</h2>
+            <h2 className='form-title'>Actualizar Programa</h2>
+
+            <div className="form-group">
+                <label htmlFor="programSelect">Selecciona un Programa</label>
+                <select 
+                    id="programSelect" 
+                    value={selectedProgramId} 
+                    onChange={handleProgramSelect}
+                    required
+                >
+                    <option value="">Selecciona un programa</option>
+                    {programs.map((program) => (
+                        <option key={program.id} value={program.id}>
+                            {program.name}
+                        </option>
+                    ))}
+                </select>
+            </div>
+
             <form onSubmit={handleSubmit} className="form">
                 <div className="form-group">
                     <label htmlFor="programName">Nombre del Programa</label>
@@ -108,11 +168,11 @@ const FormCreateProgram = () => {
                     </select>
                 </div>
 
-                <button type="submit">Crear Programa</button>
+                <button type="submit">Actualizar Programa</button>
             </form>
             {message && <p className="form-message">{message}</p>}
         </div>
     );
 };
 
-export default FormCreateProgram;
+export default FormUpdateProgram;

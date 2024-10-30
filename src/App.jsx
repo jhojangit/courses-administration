@@ -5,11 +5,11 @@ import ProtectedRoute from './components/protectedRoute/ProtectedRoute';
 import ProtectedLayout from './components/protectedLayout/ProtectedLayout';
 import LoginPage from './pages/login_page/LoginPage';
 import HomePage from './pages/home_page/HomePage';
-import FormCreateCourse from './components/forms/formCreateCourse/FormCreateCourse';
-import FormCreateFaculty from './pages/formCreateFaculty_page/FormCreateFaculty_page';
-import FormCreatePhasesPage from './pages/FormCreatePhases_page/FormCreatePhases_page';
-import FormCreateProgram from './components/forms/formCreateProgram/FormCreateProgram';
-import FormAdvisor_page from './pages/formAdvisor_page/FormAdvisor_page';
+import FormCreatePhasesPage from './pages/forms/FormCreatePhases_page/FormCreatePhases_page';
+import FormAdvisor_page from './pages/forms/formAdvisor_page/FormAdvisor_page';
+import FormCourse_page from './pages/forms/formCourse_page/FormCourse_page';
+import FormCreateFaculty_page from './pages/forms/formFaculty_page/FormFaculty_page';
+import FormCreateProgram_page from './pages/forms/formProgram_page/FormProgram_page';
 
 const App = () => {
     return (
@@ -40,33 +40,33 @@ const App = () => {
                 />
 
                 <Route
-                    path="/createcourse"
+                    path="/coursepage"
                     element={
                         <ProtectedRoute>
                             <ProtectedLayout>
-                                <FormCreateCourse />
+                                <FormCourse_page />
                             </ProtectedLayout>
                         </ProtectedRoute>
                     }
                 />
 
                 <Route
-                    path="/createprogram"
+                    path="/programpage"
                     element={
                         <ProtectedRoute>
                             <ProtectedLayout>
-                                <FormCreateProgram />
+                                <FormCreateProgram_page />
                             </ProtectedLayout>
                         </ProtectedRoute>
                     }
                 />
 
                 <Route
-                    path="/createfaculty"
+                    path="/facultypage"
                     element={
                         <ProtectedRoute>
                             <ProtectedLayout>
-                                <FormCreateFaculty />
+                                <FormCreateFaculty_page />
                             </ProtectedLayout>
                         </ProtectedRoute>
                     }
