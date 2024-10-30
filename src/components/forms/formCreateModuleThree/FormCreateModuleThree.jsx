@@ -12,7 +12,7 @@ const FormCreateModuleThree = ({ moduleThreeData, onModuleThreeChange }) => {
 
     return (
         <form className="form">
-            <h3>Crear Módulo Tres</h3>
+            <h3>MÓDULO 3</h3>
 
             {/* Campo: Guía de Aprendizaje */}
             <div className="form-group">

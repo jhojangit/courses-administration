@@ -12,7 +12,7 @@ const FormCreateModuleOne = ({ moduleOneData, onModuleOneChange }) => {
 
     return (
         <form className="form">
-            <h3>Crear Módulo Uno</h3>
+            <h3>MÓDULO 1</h3>
 
             {/* Campo: Guía de Aprendizaje */}
             <div className="form-group">

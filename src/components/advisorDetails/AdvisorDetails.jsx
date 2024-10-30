@@ -98,7 +98,7 @@ const AdvisorsDetails = () => {
                                 onClick={() => setSelectedCourseId(course.id)}
                                 style={{ cursor: 'pointer' }}
                             >
-                                {course.name} (Facultad: {course.program_id.faculty_id.name})
+                                {course?.name} (Facultad: {course?.program_id.faculty_id?.name})
                             </span>
                         </div>
                     ))}

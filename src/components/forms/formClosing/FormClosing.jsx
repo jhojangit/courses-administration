@@ -9,8 +9,7 @@ const FormClosing = ({ closingData, onClosingChange }) => {
 
     return (
         <form className="form">
-            <h3>Crear Cierre</h3>
-            
+            <h3>CIERRE</h3>
 
             <div className="form-group">
                 <label htmlFor="actividades_cierre">Actividades de cierre</label>

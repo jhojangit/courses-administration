@@ -1,11 +1,14 @@
 import React, { useEffect, useState } from 'react';
 import { supabase } from '../../supabase/supabaseClient';
 import './CourseDetails.css';
+import { Navigate } from 'react-router-dom';
 
 const CourseDetails = ({ advisorId, courseId }) => {
     const [courses, setCourses] = useState([]);
     const [selectedCourseId, setSelectedCourseId] = useState('');
     const [courseDetails, setCourseDetails] = useState(null);
+    const [redirect, setRedirect] = useState(false);
+
     const [expandedSections, setExpandedSections] = useState({
         planning: false,
         start: false,
@@ -232,6 +235,22 @@ const CourseDetails = ({ advisorId, courseId }) => {
     const toggleSection = (section) => {
         setExpandedSections((prev) => ({ ...prev, [section]: !prev[section] }));
     };
+
+
+
+    const handleUpdate = () => {
+        if (selectedCourseId) {
+            setRedirect(true); 
+        }
+    };
+
+    if (redirect && selectedCourseId) {
+        return <Navigate to={`/updatecourse/${selectedCourseId}`} />;
+    }
+
+
+
+
     return (
         <div className="course-details-container">
             <h2>Detalles del Curso</h2>
@@ -244,7 +263,8 @@ const CourseDetails = ({ advisorId, courseId }) => {
                 ))}
             </select>
 
-            
+            <button onClick={() => handleUpdate(selectedCourseId)}>Actualizar Curso</button>
+
 
             {courseDetails && (
                 <div className="course-details">

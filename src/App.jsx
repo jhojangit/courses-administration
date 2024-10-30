@@ -27,7 +27,7 @@ const App = () => {
                         </ProtectedRoute>
                     }
                 />
-                
+
                 <Route
                     path="/advisorpage"
                     element={
@@ -74,6 +74,17 @@ const App = () => {
 
                 <Route
                     path="/createphases"
+                    element={
+                        <ProtectedRoute>
+                            <ProtectedLayout>
+                                <FormCreatePhasesPage />
+                            </ProtectedLayout>
+                        </ProtectedRoute>
+                    }
+                />
+
+                <Route
+                    path="/updatecourse/:id" 
                     element={
                         <ProtectedRoute>
                             <ProtectedLayout>

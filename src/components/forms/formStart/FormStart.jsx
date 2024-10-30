@@ -9,7 +9,7 @@ const FormStart = ({ startData, onStartChange }) => {
 
     return (
         <form className="form">
-            <h3>Crear Sección de Inicio</h3>
+            <h3>SECCIÓN DE INICIO</h3>
 
             <div className="form-group">
                 <label htmlFor="banner">Banner</label>

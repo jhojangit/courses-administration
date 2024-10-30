@@ -6,7 +6,7 @@ const FormPlanning = ({ planningData, onPlanningChange }) => {
 
     return (
         <form className="form">
-            <h3>Crear Planeación</h3>
+            <h3>PLANEACIÓN</h3>
             <div className="form-group">
                 <label htmlFor="acta_de_inicio">Acta de Inicio</label>
                 <input

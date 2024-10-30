@@ -7,13 +7,20 @@ import FormCreateModuleTwo from '../../../components/forms/formCreateModuleTwo/F
 import FormCreateModuleThree from '../../../components/forms/formCreateModuleThree/FormCreateModuleThree';
 import FormCreateModuleFour from '../../../components/forms/formCreateModuleFour/FormCreateModuleFour';
 import FormClosing from '../../../components/forms/formClosing/FormClosing';
+import { useParams } from 'react-router-dom';
+
 
 
 
 
 
 const FormCreatePhasesPage = () => {
-    const [courseId, setCourseId] = useState('');
+
+    const { id } = useParams(); 
+
+
+
+    const [courseId, setCourseId] = useState(id);
     const [courses, setCourses] = useState([]);
     const [planningData, setPlanningData] = useState({
         acta_de_inicio: '',
@@ -60,6 +67,7 @@ const FormCreatePhasesPage = () => {
 
     const [message, setMessage] = useState('');
 
+    const courseName = courses.filter(course => course.id == id)
 
 
 
@@ -70,11 +78,17 @@ const FormCreatePhasesPage = () => {
             else setCourses(data);
         };
         fetchCourses();
+        
+
+        handleCourseSelection(id)
+        
     }, []);
+    
 
 
     const handleCourseSelection = async (e) => {
-        const selectedCourseId = e.target.value;
+
+        const selectedCourseId = id || e.target.value;
         setCourseId(selectedCourseId);
     
         if (selectedCourseId) {
@@ -204,7 +218,6 @@ const FormCreatePhasesPage = () => {
     
 
 
-
     
 
 
@@ -307,21 +320,15 @@ const FormCreatePhasesPage = () => {
         }
     };
 
-    return (
-        <div className="form-create-phases-container">
-            <h2 className="form-title">Crear / Editar </h2>
 
-            <div className="form-group">
-                <label htmlFor="courseId">Selecciona un Curso</label>
-                <select id="courseId" value={courseId} onChange={handleCourseSelection} required>
-                    <option value="">Selecciona un curso</option>
-                    {courses.map((course) => (
-                        <option key={course.id} value={course.id}>
-                            {course.name}
-                        </option>
-                    ))}
-                </select>
-            </div>
+
+    return (
+        <div className="form-page-container">
+
+
+            <h1>{courseName[0]?.name}</h1>
+
+            <h2 className="form-title">Crear / Editar </h2>
 
             {courseId && (
                 <>
