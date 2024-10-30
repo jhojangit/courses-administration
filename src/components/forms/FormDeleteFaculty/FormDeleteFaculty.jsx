@@ -1,10 +1,12 @@
 import React, { useState, useEffect } from 'react';
 import { supabase } from '../../../supabase/supabaseClient';
+import Notification from '../../notification/Notification';
 
 const FormDeleteFaculty = () => {
     const [faculties, setFaculties] = useState([]);
     const [selectedFacultyId, setSelectedFacultyId] = useState('');
-    const [message, setMessage] = useState('');
+    const [messageOK, setMessageOK] = useState('');
+    const [messageBad, setMessageBad] = useState('');
 
     useEffect(() => {
         const fetchFaculties = async () => {
@@ -24,16 +26,17 @@ const FormDeleteFaculty = () => {
 
         if (error) {
             console.error(error);
-            setMessage('Error eliminando la Facultad.');
+            setMessageBad('Error eliminando la Facultad.');
         } else {
-            setMessage('Facultad eliminada exitosamente.');
+            setMessageOK('Facultad eliminada exitosamente.');
             setSelectedFacultyId('');
             // Actualizar la lista de facultades
             const updatedFaculties = faculties.filter(faculty => faculty.id !== selectedFacultyId);
             setFaculties(updatedFaculties);
 
             setTimeout(() => {
-                setMessage('');
+                setMessageBad('');
+                setMessageOK('');
             }, 4000);
         }
     };
@@ -63,7 +66,24 @@ const FormDeleteFaculty = () => {
                     Eliminar Facultad
                 </button>
             )}
-            {message && <p className="form-message">{message}</p>}
+            
+            {
+                messageOK 
+                    && 
+                    <Notification 
+                        message={messageOK} 
+                        type={"succes"} 
+                    />
+            }
+
+            {
+                messageBad 
+                    && 
+                    <Notification 
+                        message={messageBad} 
+                        type={"error"} 
+                    />
+            }
         </div>
     );
 };

@@ -20,21 +20,21 @@ const FormCoursePage = () => {
                     className={`form-page-toggle-button ${visibleForm === 'create' ? 'active' : ''}`}>
                     Crear
                     <br />
-                    <i class='bx bx-layer-plus bx-md'></i>
+                    <i className='bx bx-layer-plus bx-md'></i>
                 </button>
                 <button 
                     onClick={() => toggleForm('update')} 
                     className={`form-page-toggle-button ${visibleForm === 'update' ? 'active' : ''}`}>
                     Actualizar
                     <br />
-                    <i class='bx bxs-edit bx-md'></i>
+                    <i className='bx bxs-edit bx-md'></i>
                 </button>
                 <button 
                     onClick={() => toggleForm('delete')} 
                     className={`form-page-toggle-button ${visibleForm === 'delete' ? 'active' : ''}`}>
                     Eliminar
                     <br />
-                    <i class='bx bx-layer-minus bx-md'></i>
+                    <i className='bx bx-layer-minus bx-md'></i>
                 </button>
             </div>
 

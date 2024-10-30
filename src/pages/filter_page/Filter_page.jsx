@@ -52,7 +52,7 @@ const FilterPage = () => {
                     onClick={() => toggleComponent('advisor')} 
                     className={`form-page-toggle-button ${visibleComponent === 'advisor' ? 'active' : ''}`}
                 >
-                    Asesor <i class='bx bxs-face bx-md'></i> 
+                    Asesor <i className='bx bxs-face bx-md'></i> 
                     <br />
                     {counts.advisors}
                 </button>
@@ -60,7 +60,7 @@ const FilterPage = () => {
                     onClick={() => toggleComponent('faculty')} 
                     className={`form-page-toggle-button ${visibleComponent === 'faculty' ? 'active' : ''}`}
                 >
-                    Facultad <i class='bx bxs-buildings bx-md'></i>
+                    Facultad <i className='bx bxs-buildings bx-md'></i>
                     <br />
                     {counts.faculties}
                 </button>
@@ -68,7 +68,7 @@ const FilterPage = () => {
                     onClick={() => toggleComponent('program')} 
                     className={`form-page-toggle-button ${visibleComponent === 'program' ? 'active' : ''}`}
                 >
-                    Programa <i class='bx bx-briefcase bx-md'></i>
+                    Programa <i className='bx bx-briefcase bx-md'></i>
                     <br />
                     {counts.programs}
                 </button>
@@ -76,7 +76,7 @@ const FilterPage = () => {
                     onClick={() => toggleComponent('course')} 
                     className={`form-page-toggle-button ${visibleComponent === 'course' ? 'active' : ''}`}
                 >
-                    Curso <i class='bx bx-book-bookmark bx-md'></i>
+                    Curso <i className='bx bx-book-bookmark bx-md'></i>
                     <br />
                     {counts.courses}
                 </button>

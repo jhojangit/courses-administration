@@ -1,10 +1,13 @@
 import React, { useState, useEffect } from 'react';
 import { supabase } from '../../../supabase/supabaseClient';
+import Notification from '../../notification/Notification';
 
 const FormDeleteProgram = () => {
     const [programs, setPrograms] = useState([]);
     const [selectedProgramId, setSelectedProgramId] = useState('');
-    const [message, setMessage] = useState('');
+    const [messageOK, setMessageOK] = useState('');
+    const [messageBad, setMessageBad] = useState('');
+
 
     // Obtener programas de la base de datos al cargar el componente
     useEffect(() => {
@@ -31,16 +34,17 @@ const FormDeleteProgram = () => {
 
         if (error) {
             console.error(error);
-            setMessage('Error eliminando el Programa.');
+            setMessageBad('Error eliminando el Programa.');
         } else {
-            setMessage('Programa eliminado exitosamente.');
+            setMessageOK('Programa eliminado exitosamente.');
             setSelectedProgramId('');
             setPrograms((prevPrograms) => 
                 prevPrograms.filter((program) => program.id !== selectedProgramId)
             );
 
             setTimeout(() => {
-                setMessage('');
+                setMessageOK('');
+                setMessageBad('');
             }, 4000);
         }
     };
@@ -70,7 +74,23 @@ const FormDeleteProgram = () => {
                 Eliminar Programa
             </button>
 
-            {message && <p className="form-message">{message}</p>}
+            {
+                messageOK 
+                    && 
+                    <Notification 
+                        message={messageOK} 
+                        type={"succes"} 
+                    />
+            }
+
+            {
+                messageBad 
+                    && 
+                    <Notification 
+                        message={messageBad} 
+                        type={"error"} 
+                    />
+            }
         </div>
     );
 };

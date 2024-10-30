@@ -1,12 +1,17 @@
 import React, { useState } from 'react';
 import { supabase } from '../../../supabase/supabaseClient';
 import './FormCreateFaculty.css'; 
+import Notification from '../../notification/Notification';
 
 const FormCreateFaculty = () => {
     const [facultyName, setFacultyName] = useState('');
     const [dean, setDean] = useState('');
     const [deanEmail, setDeanEmail] = useState('');
-    const [message, setMessage] = useState('');
+    const [messageOK, setMessageOK] = useState('');
+    const [messageBad, setMessageBad] = useState('');
+
+
+
 
     const handleSubmit = async (e) => {
         e.preventDefault();
@@ -17,18 +22,21 @@ const FormCreateFaculty = () => {
 
         if (error) {
             console.error(error);
-            setMessage('Error creando la Facultad.');
+            setMessageBad('Error creando la Facultad.');
         } else {
-            setMessage('Facultad creada exitosamente.');
+            setMessageOK('Facultad creada exitosamente.');
             setFacultyName(''); 
             setDean(''); 
             setDeanEmail(''); 
                 
             setTimeout(() => {
-                setMessage('');
+                setMessageOK('');
+                setMessageBad('');
             }, 4000);
         }
     };
+
+
 
     return (
         <div className="form-container">
@@ -70,7 +78,26 @@ const FormCreateFaculty = () => {
 
                 <button type="submit">Crear Facultad</button>
             </form>
-            {message && <p className="form-message">{message}</p>}
+
+
+            {
+                messageOK 
+                    && 
+                    <Notification 
+                        message={messageOK} 
+                        type={"succes"} 
+                    />
+            }
+
+            {
+                messageBad 
+                    && 
+                    <Notification 
+                        message={messageBad} 
+                        type={"error"} 
+                    />
+            }
+
         </div>
     );
 };

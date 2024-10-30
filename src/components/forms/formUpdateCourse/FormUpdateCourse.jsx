@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { supabase } from '../../../supabase/supabaseClient';
+import Notification from '../../notification/Notification';
 
 
 const FormUpdateCourse = () => {
@@ -17,7 +18,8 @@ const FormUpdateCourse = () => {
     const [advisors, setAdvisors] = useState([]);
     const [programId, setProgramId] = useState('');
     const [advisorId, setAdvisorId] = useState('');
-    const [message, setMessage] = useState('');
+    const [messageOK, setMessageOK] = useState('');
+    const [messageBad, setMessageBad] = useState('');
 
     useEffect(() => {
         const fetchData = async () => {
@@ -83,10 +85,13 @@ const FormUpdateCourse = () => {
 
         if (error) {
             console.error(error);
-            setMessage('Error actualizando el curso.');
+            setMessageBad('Error actualizando el curso.');
         } else {
-            setMessage('Curso actualizado exitosamente.');
-            setTimeout(() => setMessage(''), 4000);
+            setMessageOK('Curso actualizado exitosamente.');
+            setTimeout(() => {
+                setMessageOK('');
+                setMessageBad('');
+            }, 4000);
         }
     };
 
@@ -225,7 +230,23 @@ const FormUpdateCourse = () => {
                     <button type="submit">Actualizar Curso</button>
                 </form>
             )}
-            {message && <p className="form-message">{message}</p>}
+                        {
+                messageOK 
+                    && 
+                    <Notification 
+                        message={messageOK} 
+                        type={"succes"} 
+                    />
+            }
+
+            {
+                messageBad 
+                    && 
+                    <Notification 
+                        message={messageBad} 
+                        type={"error"} 
+                    />
+            }
         </div>
     );
 };

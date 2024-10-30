@@ -1,11 +1,15 @@
 import React, { useState, useEffect } from 'react';
 import { supabase } from '../../../supabase/supabaseClient';
+import Notification from '../../notification/Notification';
 
 const FormDeleteCourse = () => {
     const [courses, setCourses] = useState([]);
     const [selectedCourse, setSelectedCourse] = useState('');
-    const [message, setMessage] = useState('');
     const [confirmDelete, setConfirmDelete] = useState(false);
+    const [messageOK, setMessageOK] = useState('');
+    const [messageBad, setMessageBad] = useState('');
+
+
 
     useEffect(() => {
         const fetchCourses = async () => {
@@ -24,15 +28,16 @@ const FormDeleteCourse = () => {
             const { error } = await supabase.from('courses').delete().eq('id', selectedCourse);
             if (error) {
                 console.error('Error deleting course:', error);
-                setMessage('Error eliminando el curso.');
+                setMessageBad('Error eliminando el curso.');
             } else {
-                setMessage('Curso eliminado exitosamente.');
+                setMessageOK('Curso eliminado exitosamente.');
                 setCourses(courses.filter(course => course.id !== selectedCourse));
                 setSelectedCourse('');
                 setConfirmDelete(false);
 
                 setTimeout(() => {
-                    setMessage('');
+                    setMessageOK('');
+                    setMessageBad('');
                 }, 4000);
             }
         }
@@ -72,7 +77,23 @@ const FormDeleteCourse = () => {
                     <button onClick={() => setConfirmDelete(false)} className="cancel-button">Cancelar</button>
                 </div>
             )}
-            {message && <p className="form-message">{message}</p>}
+            {
+                messageOK 
+                    && 
+                    <Notification 
+                        message={messageOK} 
+                        type={"succes"} 
+                    />
+            }
+
+            {
+                messageBad 
+                    && 
+                    <Notification 
+                        message={messageBad} 
+                        type={"error"} 
+                    />
+            }
         </div>
     );
 };

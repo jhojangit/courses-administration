@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { supabase } from '../../../supabase/supabaseClient';
 import './FormCreateCourse.css'; 
+import Notification from '../../notification/Notification';
 
 const FormCreateCourse = () => {
     const [courseName, setCourseName] = useState('');
@@ -15,7 +16,8 @@ const FormCreateCourse = () => {
     const [advisors, setAdvisors] = useState([]);
     const [programId, setProgramId] = useState('');
     const [advisorId, setAdvisorId] = useState('');
-    const [message, setMessage] = useState('');
+    const [messageOK, setMessageOK] = useState('');
+    const [messageBad, setMessageBad] = useState('');
 
     useEffect(() => {
         const fetchData = async () => {
@@ -49,9 +51,9 @@ const FormCreateCourse = () => {
 
         if (error) {
             console.error(error);
-            setMessage('Error creando el curso.');
+            setMessageBad('Error creando el curso.');
         } else {
-            setMessage('Curso creado exitosamente.');
+            setMessageOK('Curso creado exitosamente.');
             // Limpiar el formulario
             setCourseName('');
             setCredits('');
@@ -65,7 +67,8 @@ const FormCreateCourse = () => {
             setAdvisorId('');
 
             setTimeout(() => {
-                setMessage('');
+                setMessageOK('');
+                setMessageBad('');
             }, 4000);
         }
     };
@@ -196,7 +199,23 @@ const FormCreateCourse = () => {
 
                 <button type="submit">Crear Curso</button>
             </form>
-            {message && <p className="form-message">{message}</p>}
+            {
+                messageOK 
+                    && 
+                    <Notification 
+                        message={messageOK} 
+                        type={"succes"} 
+                    />
+            }
+
+            {
+                messageBad 
+                    && 
+                    <Notification 
+                        message={messageBad} 
+                        type={"error"} 
+                    />
+            }
         </div>
     );
 };

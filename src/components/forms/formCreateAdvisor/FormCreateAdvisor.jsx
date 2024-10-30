@@ -1,11 +1,13 @@
 import React, { useState } from 'react';
 import { supabase } from '../../../supabase/supabaseClient';
 import './FormCreateAdvisor.css'; 
+import Notification from '../../notification/Notification';
 
 const FormCreateAdvisor = () => {
     const [advisorName, setAdvisorName] = useState('');
     const [advisorEmail, setAdvisorEmail] = useState('');
-    const [message, setMessage] = useState('');
+    const [messageOK, setMessageOK] = useState('');
+    const [messageBad, setMessageBad] = useState('');
 
     const handleSubmit = async (e) => {
         e.preventDefault();
@@ -16,14 +18,15 @@ const FormCreateAdvisor = () => {
 
         if (error) {
             console.error(error);
-            setMessage('Error creando el asesor.');
+            setMessageBad('Error creando el asesor.');
         } else {
-            setMessage('Asesor creado exitosamente.');
+            setMessageOK('Asesor creado exitosamente.');
             setAdvisorName(''); 
             setAdvisorEmail(''); 
 
             setTimeout(() => {
-                setMessage('');
+                setMessageOK('');
+                setMessageBad('');
             }, 4000);
         }
     };
@@ -60,7 +63,24 @@ const FormCreateAdvisor = () => {
                     Crear Asesor
                 </button>
             </form>
-            {message && <p className="message">{message}</p>}
+
+            {
+                messageOK 
+                    && 
+                    <Notification 
+                        message={messageOK} 
+                        type={"succes"} 
+                    />
+            }
+
+            {
+                messageBad 
+                    && 
+                    <Notification 
+                        message={messageBad} 
+                        type={"error"} 
+                    />
+            }
         </div>
     );
 };

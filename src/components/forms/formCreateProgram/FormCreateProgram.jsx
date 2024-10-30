@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { supabase } from '../../../supabase/supabaseClient';
+import Notification from '../../notification/Notification';
 
 const FormCreateProgram = () => {
     const [programName, setProgramName] = useState('');
@@ -7,7 +8,8 @@ const FormCreateProgram = () => {
     const [coordinatorEmail, setCoordinatorEmail] = useState('');
     const [facultyId, setFacultyId] = useState('');
     const [faculties, setFaculties] = useState([]); 
-    const [message, setMessage] = useState('');
+    const [messageOK, setMessageOK] = useState('');
+    const [messageBad, setMessageBad] = useState('');
 
     // Obtener las facultades de la tabla 'faculties' en Supabase al cargar el componente
     useEffect(() => {
@@ -40,16 +42,17 @@ const FormCreateProgram = () => {
 
         if (error) {
             console.error(error);
-            setMessage('Error creando el Programa.');
+            setMessageBad('Error creando el Programa.');
         } else {
-            setMessage('Programa creado exitosamente.');
+            setMessageOK('Programa creado exitosamente.');
             setProgramName(''); 
             setCoordinator(''); 
             setCoordinatorEmail('');
             setFacultyId(''); 
 
             setTimeout(() => {
-                setMessage('');
+                setMessageOK('');
+                setMessageBad('');
             }, 4000);
         }
     };
@@ -110,7 +113,23 @@ const FormCreateProgram = () => {
 
                 <button type="submit">Crear Programa</button>
             </form>
-            {message && <p className="form-message">{message}</p>}
+            {
+                messageOK 
+                    && 
+                    <Notification 
+                        message={messageOK} 
+                        type={"succes"} 
+                    />
+            }
+
+            {
+                messageBad 
+                    && 
+                    <Notification 
+                        message={messageBad} 
+                        type={"error"} 
+                    />
+            }
         </div>
     );
 };

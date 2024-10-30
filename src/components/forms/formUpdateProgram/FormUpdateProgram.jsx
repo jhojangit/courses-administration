@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { supabase } from '../../../supabase/supabaseClient';
+import Notification from '../../notification/Notification';
 
 
 const FormUpdateProgram = () => {
@@ -10,7 +11,8 @@ const FormUpdateProgram = () => {
     const [coordinatorEmail, setCoordinatorEmail] = useState('');
     const [facultyId, setFacultyId] = useState('');
     const [faculties, setFaculties] = useState([]);
-    const [message, setMessage] = useState('');
+    const [messageOK, setMessageOK] = useState('');
+    const [messageBad, setMessageBad] = useState('');
 
     // Obtener las facultades y programas de la base de datos al cargar el componente
     useEffect(() => {
@@ -81,9 +83,9 @@ const FormUpdateProgram = () => {
 
         if (error) {
             console.error(error);
-            setMessage('Error actualizando el Programa.');
+            setMessageBad('Error actualizando el Programa.');
         } else {
-            setMessage('Programa actualizado exitosamente.');
+            setMessageOK('Programa actualizado exitosamente.');
             setSelectedProgramId('');
             setProgramName(''); 
             setCoordinator(''); 
@@ -91,7 +93,8 @@ const FormUpdateProgram = () => {
             setFacultyId(''); 
 
             setTimeout(() => {
-                setMessage('');
+                setMessageOK('');
+                setMessageBad('');
             }, 4000);
         }
     };
@@ -170,7 +173,23 @@ const FormUpdateProgram = () => {
 
                 <button type="submit">Actualizar Programa</button>
             </form>
-            {message && <p className="form-message">{message}</p>}
+            {
+                messageOK 
+                    && 
+                    <Notification 
+                        message={messageOK} 
+                        type={"succes"} 
+                    />
+            }
+
+            {
+                messageBad 
+                    && 
+                    <Notification 
+                        message={messageBad} 
+                        type={"error"} 
+                    />
+            }
         </div>
     );
 };

@@ -1,10 +1,12 @@
 import React, { useState, useEffect } from 'react';
 import { supabase } from '../../../supabase/supabaseClient';
+import Notification from '../../notification/Notification';
 
 const FormDeleteAdvisor = () => {
     const [advisors, setAdvisors] = useState([]);
     const [selectedAdvisorId, setSelectedAdvisorId] = useState('');
-    const [message, setMessage] = useState('');
+    const [messageOK, setMessageOK] = useState('');
+    const [messageBad, setMessageBad] = useState('');
 
     // Fetch advisors from the database
     useEffect(() => {
@@ -30,13 +32,14 @@ const FormDeleteAdvisor = () => {
 
         if (error) {
             console.error(error);
-            setMessage('Error eliminando el asesor.');
+            setMessageBad('Error eliminando el asesor.');
         } else {
-            setMessage('Asesor eliminado exitosamente.');
+            setMessageOK('Asesor eliminado exitosamente.');
             setSelectedAdvisorId('');
 
             setTimeout(() => {
-                setMessage('');
+                setMessageOK('');
+                setMessageBad('');
             }, 4000);
         }
     };
@@ -68,7 +71,23 @@ const FormDeleteAdvisor = () => {
                     Eliminar Asesor
                 </button>
             </form>
-            {message && <p className="message">{message}</p>}
+            {
+                messageOK 
+                    && 
+                    <Notification 
+                        message={messageOK} 
+                        type={"succes"} 
+                    />
+            }
+
+            {
+                messageBad 
+                    && 
+                    <Notification 
+                        message={messageBad} 
+                        type={"error"} 
+                    />
+            }
         </div>
     );
 };

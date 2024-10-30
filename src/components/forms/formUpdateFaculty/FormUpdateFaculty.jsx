@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { supabase } from '../../../supabase/supabaseClient';
+import Notification from '../../notification/Notification';
 
 const FormUpdateFaculty = () => {
     const [faculties, setFaculties] = useState([]);
@@ -7,7 +8,9 @@ const FormUpdateFaculty = () => {
     const [facultyName, setFacultyName] = useState('');
     const [dean, setDean] = useState('');
     const [deanEmail, setDeanEmail] = useState('');
-    const [message, setMessage] = useState('');
+    const [messageOK, setMessageOK] = useState('');
+    const [messageBad, setMessageBad] = useState('');
+
 
     useEffect(() => {
         const fetchFaculties = async () => {
@@ -50,17 +53,18 @@ const FormUpdateFaculty = () => {
 
         if (error) {
             console.error(error);
-            setMessage('Error actualizando la Facultad.');
+            setMessageBad('Error actualizando la Facultad.');
         } else {
-            setMessage('Facultad actualizada exitosamente.');
+            setMessageOK('Facultad actualizada exitosamente.');
             setSelectedFacultyId('');
             setFacultyName('');
             setDean('');
             setDeanEmail('');
 
             setTimeout(() => {
-                setMessage('');
-            }, 4000);
+                setMessageOK('');
+                setMessageBad('');
+            }, 5000);
         }
     };
 
@@ -122,7 +126,24 @@ const FormUpdateFaculty = () => {
                     <button type="submit">Actualizar Facultad</button>
                 </form>
             )}
-            {message && <p className="form-message">{message}</p>}
+                        {
+                messageOK 
+                    && 
+                    <Notification 
+                        message={messageOK} 
+                        type={"success"} 
+                    />
+
+            }
+
+            {
+                messageBad 
+                    && 
+                    <Notification 
+                        message={messageBad} 
+                        type={"error"} 
+                    />
+            }
         </div>
     );
 };

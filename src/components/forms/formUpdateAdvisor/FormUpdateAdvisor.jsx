@@ -1,12 +1,14 @@
 import React, { useState, useEffect } from 'react';
 import { supabase } from '../../../supabase/supabaseClient';
+import Notification from '../../notification/Notification';
 
 const FormUpdateAdvisor = () => {
     const [advisors, setAdvisors] = useState([]);
     const [selectedAdvisorId, setSelectedAdvisorId] = useState('');
     const [advisorName, setAdvisorName] = useState('');
     const [advisorEmail, setAdvisorEmail] = useState('');
-    const [message, setMessage] = useState('');
+    const [messageOK, setMessageOK] = useState('');
+    const [messageBad, setMessageBad] = useState('');
 
     // Fetch advisors from the database
     useEffect(() => {
@@ -51,9 +53,9 @@ const FormUpdateAdvisor = () => {
 
         if (error) {
             console.error(error);
-            setMessage('Error actualizando el asesor.');
+            setMessageBad('Error actualizando el asesor.');
         } else {
-            setMessage('Asesor actualizado exitosamente.');
+            setMessageOK('Asesor actualizado exitosamente.');
             setSelectedAdvisorId('');
             setAdvisorName('');
             setAdvisorEmail('');
@@ -113,7 +115,23 @@ const FormUpdateAdvisor = () => {
                     Actualizar Asesor
                 </button>
             </form>
-            {message && <p className="message">{message}</p>}
+            {
+                messageOK 
+                    && 
+                    <Notification 
+                        message={messageOK} 
+                        type={"succes"} 
+                    />
+            }
+
+            {
+                messageBad 
+                    && 
+                    <Notification 
+                        message={messageBad} 
+                        type={"error"} 
+                    />
+            }
         </div>
     );
 };
