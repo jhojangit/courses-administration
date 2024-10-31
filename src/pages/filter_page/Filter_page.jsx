@@ -88,7 +88,7 @@ const FilterPage = () => {
                 {visibleComponent === 'advisor' && <AdvisorDetails />}
                 {visibleComponent === 'faculty' && <FacultyDetails />}
                 {visibleComponent === 'program' && <ProgramDetails />}
-                {visibleComponent === 'course' && <CourseDetails />}
+                {visibleComponent === 'course' && <CourseDetails filter={true}/>}
             </div>
         </div>
     );

@@ -9,70 +9,20 @@
     color: #FFFFFF;
 }
 
-.advisor-select {
-    width: 100%;
-    padding: 10px;
-    margin-bottom: 25px;
-    font-size: 1em;
-    color: var(--color-text);
-    background-color: var(--color-primary-contrast);
-    border: 1px solid var(--color-border);
-    border-radius: 8px;
-    outline: none;
-    transition: border-color 0.3s;
-}
 
-.advisor-select:focus {
-    border-color: var(--color-text);
-}
 
 .advisor-title {
     font-size: 1.75em;
     font-weight: bold;
     margin-bottom: 15px;
+    margin-top: 15px;
     color: var(--color-text);
-}
-
-.advisor-details h3 {
-    font-size: 1.5em;
-    font-weight: bold;
-    color: var(--color-text);
-    margin: 15px 0 5px;
-}
-
-
-
-.advisor-section-header {
-    font-weight: bold;
-    font-size: 1.1em;
-    padding: 10px;
-    background-color: var(--color-primary-contrast);
-    border-radius: 6px;
-    color: var(--color-text);
-    transition: background-color 0.3s;
-    display: flex;
-    align-items: center;
-    margin-top: 20px;
-}
-
-.advisor-section-courses {
-    font-weight: bold;
-    font-size: 1.1em;
-    padding: 10px;
-    border-radius: 6px;
-    color: var(--color-text);
-    transition: background-color 0.3s;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-top: 20px;
 }
 
 
 
 .advisor-section-content {
-    padding: 15px 20px;
-    background-color: var(--color-primary-contrast);
+    padding: 1px 1px;
     border-radius: 6px;
     margin-top: 10px;
     margin-bottom: 15px;
@@ -80,31 +30,9 @@
     font-size: 0.95em;
 }
 
-.advisor-field-row {
-    display: flex;
-    justify-content: space-between;
-    padding: 10px 0;
-    border-bottom: 1px solid #4E5D75;
-    align-items: center;
-    transition: background-color 0.2s;
-}
 
-.advisor-field-row:hover {
-    background-color: #434C5E;
-}
 
-.advisor-field-label {
-    font-weight: bold;
-    flex: 1;
-    color: #C5C6CA;
-}
 
-.advisor-field-value {
-    flex: 2;
-    color: #88C0D0;
-    text-align: right;
-    cursor: pointer;
-    transition: color 0.2s;
-}
+
 
 

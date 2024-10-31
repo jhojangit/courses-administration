@@ -57,7 +57,7 @@ const ProgramDetails = () => {
 
     return (
         <div className="program-courses-container">
-            <h2>Selecciona un Programa</h2>
+            <h2>Programa</h2>
             <select value={selectedProgramId || ''} onChange={handleProgramChange} className="program-select">
                 <option value="">Seleccione un programa</option>
                 {programs.map((program) => (
@@ -87,7 +87,7 @@ const ProgramDetails = () => {
             )}
 
             {selectedCourseId && (
-                <CourseDetails courseId={selectedCourseId} />
+                <CourseDetails courseId={selectedCourseId} filter={false} />
             )}
         </div>
     );

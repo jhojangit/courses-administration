@@ -100,7 +100,7 @@ const FacultyDetails = () => {
 
     return (
         <div className="faculty-courses-container">
-            <h2>Selecciona una Facultad</h2>
+            <h2>Facultad</h2>
             <select value={selectedFacultyId} onChange={handleFacultyChange} className="faculty-select">
                 <option value="">Seleccione una facultad</option>
                 {faculties.map((faculty) => (
@@ -116,7 +116,7 @@ const FacultyDetails = () => {
 
             {programs.length > 0 && (
                 <>
-                    <h3>Selecciona un Programa</h3>
+                    <h2>Programa</h2>
                     <select value={selectedProgramId} onChange={handleProgramChange} className="program-select">
                         <option value="">Seleccione un programa</option>
                         {programs.map((program) => (
@@ -148,7 +148,7 @@ const FacultyDetails = () => {
             )}
 
             {selectedCourseId && (
-                <CourseDetails courseId={selectedCourseId} />
+                <CourseDetails courseId={selectedCourseId} filter={false} />
             )}
         </div>
     );

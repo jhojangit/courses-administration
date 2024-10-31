@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { supabase } from '../../../supabase/supabaseClient';
-import './FormCreateCourse.css'; 
+import './FormCreateCourse.css';
 import Notification from '../../notification/Notification';
 
 const FormCreateCourse = () => {
@@ -37,16 +37,16 @@ const FormCreateCourse = () => {
         const { data, error } = await supabase
             .from('courses')
             .insert([{
-                name: courseName, 
-                credits: credits, 
-                teacher: teacher, 
-                hpa: hpa, 
-                academic_period: academicPeriod, 
-                url_drive: urlDrive, 
+                name: courseName,
+                credits: credits,
+                teacher: teacher,
+                hpa: hpa,
+                academic_period: academicPeriod,
+                url_drive: urlDrive,
                 prerequisites: prerequisites,
                 observations: observations,
-                program_id: programId, 
-                advisor_id: advisorId 
+                program_id: programId,
+                advisor_id: advisorId
             }]);
 
         if (error) {
@@ -199,23 +199,9 @@ const FormCreateCourse = () => {
 
                 <button type="submit">Crear Curso</button>
             </form>
-            {
-                messageOK 
-                    && 
-                    <Notification 
-                        message={messageOK} 
-                        type={"succes"} 
-                    />
-            }
 
-            {
-                messageBad 
-                    && 
-                    <Notification 
-                        message={messageBad} 
-                        type={"error"} 
-                    />
-            }
+            {messageOK && <Notification message={messageOK} type={"succes"} />}
+            {messageBad && <Notification message={messageBad} type={"error"} />}
         </div>
     );
 };

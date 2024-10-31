@@ -74,12 +74,11 @@ const AdvisorsDetails = () => {
 
 
 
-    console.log(advisorDetails);
-    
+
 
     return (
         <div className="advisor-details-container">
-            <h2 className="advisor-title">Selecciona un asesor</h2>
+            <h2 className="advisor-title">Asesor</h2>
             <select value={selectedAdvisor} onChange={handleAdvisorChange} className="advisor-select">
                 <option value="">Seleccione un asesor</option>
                 {advisors.map((advisor) => (
@@ -88,39 +87,37 @@ const AdvisorsDetails = () => {
                     </option>
                 ))}
             </select>
-    
+
             {advisorDetails && (
                 <div className="advisor-details">
                     <h3 className="advisor-title">{advisorDetails.name}</h3>
-                    <h4 className="advisor-section-header">{advisorDetails.email}</h4>
-    
+
                     <div className="advisor-section-content">
-                    <h4 className="advisor-section-courses">Cursos Asignados</h4>
-                        {advisorDetails.courses.map(course => (
-                            <div key={course.id} className="advisor-field-row">
-                                <span className="advisor-field-label">Curso:</span>
-                                <span 
-                                    className="advisor-field-value" 
-                                    onClick={() => setSelectedCourseId(course.id)}
-                                >
-                                    {course?.name} (Facultad: {course?.program_id.faculty_id?.name})
-                                </span>
+                            <div className="course-list">
+                                <h4 className="advisor-section-courses">Cursos Asignados</h4>
+                                {advisorDetails.courses.map(course => (
+                                    <div key={course.id} className="course-item">
+                                        <span
+                                            className="course-name"
+                                            onClick={() => setSelectedCourseId(course.id)}
+                                            style={{ cursor: 'pointer' }}
+                                        >
+                                            {course.name}  (Facultad: {course?.program_id.faculty_id?.name})
+                                        </span>
+                                    </div>
+                                ))}
                             </div>
-                        ))}
                     </div>
                 </div>
             )}
 
 
-
-            
-            
             {selectedCourseId && (
-                <CourseDetails advisorId={selectedAdvisor} courseId={selectedCourseId} />
+                <CourseDetails advisorId={selectedAdvisor} courseId={selectedCourseId} filter={false} />
             )}
         </div>
     );
-    
+
 };
 
 export default AdvisorsDetails;

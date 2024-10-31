@@ -3,7 +3,7 @@ import { supabase } from '../../supabase/supabaseClient';
 import './CourseDetails.css';
 import { Navigate } from 'react-router-dom';
 
-const CourseDetails = ({ advisorId, courseId }) => {
+const CourseDetails = ({ advisorId, courseId, filter }) => {
     const [courses, setCourses] = useState([]);
     const [selectedCourseId, setSelectedCourseId] = useState('');
     const [courseDetails, setCourseDetails] = useState(false);
@@ -253,7 +253,11 @@ const CourseDetails = ({ advisorId, courseId }) => {
 
     return (
         <div className="course-details-container">
-            <h2>Detalles del Curso</h2>
+            {
+                filter &&
+                <>
+
+                <h2>Detalles del Curso</h2>
             <select value={selectedCourseId} onChange={handleCourseChange} className="course-select">
                 <option value="">Seleccione un curso</option>
                 {courses.map((course) => (
@@ -262,6 +266,9 @@ const CourseDetails = ({ advisorId, courseId }) => {
                     </option>
                 ))}
             </select>
+                </>
+
+            }
 
             <button onClick={() => handleUpdate(selectedCourseId)}>Actualizar Curso</button>
 
