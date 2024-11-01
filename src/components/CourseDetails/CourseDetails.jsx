@@ -240,7 +240,7 @@ const CourseDetails = ({ advisorId, courseId, filter }) => {
 
     const handleUpdate = () => {
         if (selectedCourseId) {
-            setRedirect(true); 
+            setRedirect(true);
         }
     };
 
@@ -257,32 +257,88 @@ const CourseDetails = ({ advisorId, courseId, filter }) => {
                 filter &&
                 <>
 
-                <h2>Detalles del Curso</h2>
-            <select value={selectedCourseId} onChange={handleCourseChange} className="course-select">
-                <option value="">Seleccione un curso</option>
-                {courses.map((course) => (
-                    <option key={course.id} value={course.id}>
-                        {course.name}
-                    </option>
-                ))}
-            </select>
+                    <h2>Curso</h2>
+                    <select value={selectedCourseId} onChange={handleCourseChange} className="course-select">
+                        <option value="">Seleccione un curso</option>
+                        {courses.map((course) => (
+                            <option key={course.id} value={course.id}>
+                                {course.name}
+                            </option>
+                        ))}
+                    </select>
                 </>
 
             }
 
-            <button onClick={() => handleUpdate(selectedCourseId)}>Actualizar Curso</button>
+
 
 
             {courseDetails && (
                 <div className="course-details">
                     <h3 className="course-title">{courseDetails.name}</h3>
 
+                    <button onClick={() => handleUpdate(selectedCourseId)} className="update-button-course">
+                        Editar<i className='bx bxs-edit bx-sm'></i>
+                    </button>
+
+                    {/* Contenedor de los títulos en una fila */}
+                    <div className="section-headers-container">
+                        <h3
+                            onClick={() => toggleSection('planning')}
+                            className={`section-header ${expandedSections.planning ? 'active' : ''}`}
+                        >
+                            Planeación
+                        </h3>
+
+                        <h3
+                            onClick={() => toggleSection('start')}
+                            className={`section-header ${expandedSections.start ? 'active' : ''}`}
+                        >
+                            Incicio
+                        </h3>
+
+                        <h3
+                            onClick={() => toggleSection('module_1')}
+                            className={`section-header ${expandedSections.module_1 ? 'active' : ''}`}
+                        >
+                            módulo 1
+                        </h3>
+
+                        <h3
+                            onClick={() => toggleSection('module_2')}
+                            className={`section-header ${expandedSections.module_2 ? 'active' : ''}`}
+                        >
+                            Módulo 2
+                        </h3>
+
+                        <h3
+                            onClick={() => toggleSection('module_3')}
+                            className={`section-header ${expandedSections.module_3 ? 'active' : ''}`}
+                        >
+                            Módulo 3
+                        </h3>
+
+                        <h3
+                            onClick={() => toggleSection('module_4')}
+                            className={`section-header ${expandedSections.module_4 ? 'active' : ''}`}
+                        >
+                            Módulo 4
+                        </h3>
+
+                        <h3
+                            onClick={() => toggleSection('closing')}
+                            className={`section-header ${expandedSections.closing ? 'active' : ''}`}
+                        >
+                            Cierre
+                        </h3>
+
+                    </div>
+
                     {/* Planeación */}
-                    <h3 onClick={() => toggleSection('planning')} className="section-header">
-                        Planeación
-                    </h3>
+
                     {expandedSections.planning && (
                         <div className="section-content">
+                            <h3>planeación</h3>
                             <div className="field-row">
                                 <span className="field-label">Acta de Inicio:</span>
                                 <span className="field-value">{courseDetails.planning[0]?.acta_de_inicio}</span>
@@ -299,11 +355,11 @@ const CourseDetails = ({ advisorId, courseId, filter }) => {
                     )}
 
                     {/* Inicio */}
-                    <h3 onClick={() => toggleSection('start')} className="section-header">
-                        Inicio
-                    </h3>
+
                     {expandedSections.start && (
                         <div className="section-content">
+                                                        <h3>inicio</h3>
+
                             <div className="field-row">
                                 <span className="field-label">Banner:</span>
                                 <span className="field-value">{courseDetails.start[0]?.banner}</span>
@@ -348,11 +404,11 @@ const CourseDetails = ({ advisorId, courseId, filter }) => {
                     )}
 
                     {/* Módulo 1 */}
-                    <h3 onClick={() => toggleSection('module_1')} className="section-header">
-                        Módulo 1
-                    </h3>
+
                     {expandedSections.module_1 && (
                         <div className="section-content">
+                                                                                    <h3>Módulo 1</h3>
+
                             <div className="field-row">
                                 <span className="field-label">Guía de Aprendizaje:</span>
                                 <span className="field-value">{courseDetails.module_1[0]?.guia_aprendizaje}</span>
@@ -378,11 +434,11 @@ const CourseDetails = ({ advisorId, courseId, filter }) => {
 
 
                     {/* Módulo 2 */}
-                    <h3 onClick={() => toggleSection('module_2')} className="section-header">
-                        Módulo 2
-                    </h3>
+
                     {expandedSections.module_2 && (
                         <div className="section-content">
+                                                                                                                <h3>Módulo 2</h3>
+
                             <div className="field-row">
                                 <span className="field-label">Guía de Aprendizaje:</span>
                                 <span className="field-value">{courseDetails.module_2[0]?.guia_aprendizaje}</span>
@@ -408,11 +464,11 @@ const CourseDetails = ({ advisorId, courseId, filter }) => {
 
 
                     {/* Módulo 3 */}
-                    <h3 onClick={() => toggleSection('module_3')} className="section-header">
-                        Módulo 3
-                    </h3>
+
                     {expandedSections.module_3 && (
                         <div className="section-content">
+                                                                                                                <h3>Módulo 3</h3>
+
                             <div className="field-row">
                                 <span className="field-label">Guía de Aprendizaje:</span>
                                 <span className="field-value">{courseDetails.module_3[0]?.guia_aprendizaje}</span>
@@ -438,11 +494,11 @@ const CourseDetails = ({ advisorId, courseId, filter }) => {
 
 
                     {/* Módulo 4 */}
-                    <h3 onClick={() => toggleSection('module_4')} className="section-header">
-                        Módulo 4
-                    </h3>
+
                     {expandedSections.module_4 && (
                         <div className="section-content">
+                                                                                                                <h3>Módulo 4</h3>
+
                             <div className="field-row">
                                 <span className="field-label">Guía de Aprendizaje:</span>
                                 <span className="field-value">{courseDetails.module_4[0]?.guia_aprendizaje}</span>
@@ -468,11 +524,11 @@ const CourseDetails = ({ advisorId, courseId, filter }) => {
 
 
                     {/* Closing */}
-                    <h3 onClick={() => toggleSection('closing')} className="section-header">
-                        Cierre
-                    </h3>
+
                     {expandedSections.closing && (
                         <div className="section-content">
+                                                                                                                <h3>Cierre</h3>
+
                             <div className="field-row">
                                 <span className="field-label">Actividades de Cierre:</span>
                                 <span className="field-value">{courseDetails.closing[0]?.actividades_cierre}</span>
@@ -484,7 +540,7 @@ const CourseDetails = ({ advisorId, courseId, filter }) => {
                         </div>
                     )}
 
-                    
+
                 </div>
             )}
         </div>
