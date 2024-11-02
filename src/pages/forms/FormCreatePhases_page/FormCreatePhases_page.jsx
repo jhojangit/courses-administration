@@ -24,9 +24,9 @@ const FormCreatePhasesPage = () => {
     const [courseId, setCourseId] = useState(id);
     const [courses, setCourses] = useState([]);
     const [planningData, setPlanningData] = useState({
-        acta_de_inicio: '',
-        matriz_de_coherencia: '',
-        diseño_instruccional: ''
+        acta_de_inicio: false,
+        matriz_de_coherencia: false,
+        diseño_instruccional: false
     });
 
     const [startData, setStartData] = useState({
@@ -105,9 +105,9 @@ const FormCreatePhasesPage = () => {
                 console.error('Error fetching planning data:', planningError);
             } else {
                 setPlanningData(planningData || {
-                    acta_de_inicio: '',
-                    matriz_de_coherencia: '',
-                    diseño_instruccional: ''
+                    acta_de_inicio: false,
+                    matriz_de_coherencia: false,
+                    diseño_instruccional: false
                 });
             }
 
@@ -225,9 +225,12 @@ const FormCreatePhasesPage = () => {
 
     
 
-    const handlePlanningChange = (field, value) => {
-        setPlanningData((prevData) => ({ ...prevData, [field]: value }));
-    };
+        const handlePlanningChange = (name, value) => {
+            setPlanningData(prevData => ({
+                ...prevData,
+                [name]: value
+            }));
+        };
 
     const handleStartChange = (field, value) => {
         setStartData((prevData) => ({ ...prevData, [field]: value }));
@@ -259,6 +262,8 @@ const FormCreatePhasesPage = () => {
 
     const handleSubmit = async (e) => {
         e.preventDefault();
+
+        
         
         const { error: planningError } = await supabase
             .from('planning')
@@ -314,8 +319,17 @@ const FormCreatePhasesPage = () => {
 
 
         if (planningError || startError || moduleOneError || moduleTwoError || moduleThreeError || moduleFourError || closingError) {
-            console.error('Error al guardar los registros:', planningError || startError || moduleOneError || moduleTwoError || moduleThreeError || moduleFourError || closingError);
+            console.error('Error al guardar los registros:',
+                "planing", planningError ||
+                "Start", startError ||
+                "One", moduleOneError ||
+                "two",  moduleTwoError ||
+                "three", moduleThreeError ||
+                "four", moduleFourError ||
+                "Close", closingError
+            );
             setMessageBad('Error registrando los datos.');
+
         } else {
             setMessageOK('Registros guardados exitosamente.');
             setTimeout(() => {

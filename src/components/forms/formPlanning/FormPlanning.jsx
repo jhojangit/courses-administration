@@ -1,7 +1,8 @@
 const FormPlanning = ({ planningData, onPlanningChange }) => {
     const handleChange = (e) => {
-        const { name, value } = e.target;
-        onPlanningChange(name, value);  
+        const { name, checked } = e.target;
+        // Invierte el estado del checkbox en `planningData`
+        onPlanningChange(name, checked);  
     };
 
     return (
@@ -10,10 +11,10 @@ const FormPlanning = ({ planningData, onPlanningChange }) => {
             <div className="form-group-phases">
                 <label htmlFor="acta_de_inicio">Acta de Inicio</label>
                 <input
-                    type="text"
+                    type="checkbox"
                     id="acta_de_inicio"
                     name="acta_de_inicio"
-                    value={planningData.acta_de_inicio || ''}
+                    checked={planningData.acta_de_inicio}
                     onChange={handleChange}
                     required
                 />
@@ -21,10 +22,10 @@ const FormPlanning = ({ planningData, onPlanningChange }) => {
             <div className="form-group-phases">
                 <label htmlFor="matriz_de_coherencia">Matriz de Coherencia</label>
                 <input
-                    type="text"
+                    type="checkbox"
                     id="matriz_de_coherencia"
                     name="matriz_de_coherencia"
-                    value={planningData.matriz_de_coherencia || ''}
+                    checked={planningData.matriz_de_coherencia}
                     onChange={handleChange}
                     required
                 />
@@ -32,10 +33,10 @@ const FormPlanning = ({ planningData, onPlanningChange }) => {
             <div className="form-group-phases">
                 <label htmlFor="diseño_instruccional">Diseño Instruccional</label>
                 <input
-                    type="text"
+                    type="checkbox"
                     id="diseño_instruccional"
                     name="diseño_instruccional"
-                    value={planningData.diseño_instruccional || ''}
+                    checked={planningData.diseño_instruccional}
                     onChange={handleChange}
                     required
                 />
