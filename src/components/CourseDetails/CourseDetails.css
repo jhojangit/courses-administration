@@ -34,7 +34,7 @@
 
 .section-header {
     cursor: pointer;
-    font-size: 1rem;
+    font-size: .9rem;
     font-weight: bold;
     padding: 10px;
     background-color: var(--color-primary);

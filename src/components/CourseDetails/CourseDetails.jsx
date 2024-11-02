@@ -251,6 +251,7 @@ const CourseDetails = ({ advisorId, courseId, filter }) => {
 
 
 
+
     return (
         <div className="course-details-container">
             {
@@ -338,18 +339,24 @@ const CourseDetails = ({ advisorId, courseId, filter }) => {
 
                     {expandedSections.planning && (
                         <div className="section-content">
-                            <h3>planeación</h3>
+                            <h3>Planeación</h3>
                             <div className="field-row">
                                 <span className="field-label">Acta de Inicio:</span>
-                                <span className="field-value">{courseDetails.planning[0]?.acta_de_inicio}</span>
+                                <span className="field-value">
+                                    {courseDetails.planning[0]?.acta_de_inicio ? "Completado" : "No Completado"}
+                                </span>
                             </div>
                             <div className="field-row">
                                 <span className="field-label">Matriz de Coherencia:</span>
-                                <span className="field-value">{courseDetails.planning[0]?.matriz_de_coherencia}</span>
+                                <span className="field-value">
+                                    {courseDetails.planning[0]?.matriz_de_coherencia ? "Completado" : "No Completado"}
+                                </span>
                             </div>
                             <div className="field-row">
                                 <span className="field-label">Diseño Instruccional:</span>
-                                <span className="field-value">{courseDetails.planning[0]?.diseño_instruccional}</span>
+                                <span className="field-value">
+                                    {courseDetails.planning[0]?.diseño_instruccional ? "Completado" : "No Completado"}
+                                </span>
                             </div>
                         </div>
                     )}
@@ -358,7 +365,7 @@ const CourseDetails = ({ advisorId, courseId, filter }) => {
 
                     {expandedSections.start && (
                         <div className="section-content">
-                                                        <h3>inicio</h3>
+                            <h3>inicio</h3>
 
                             <div className="field-row">
                                 <span className="field-label">Banner:</span>
@@ -407,7 +414,7 @@ const CourseDetails = ({ advisorId, courseId, filter }) => {
 
                     {expandedSections.module_1 && (
                         <div className="section-content">
-                                                                                    <h3>Módulo 1</h3>
+                            <h3>Módulo 1</h3>
 
                             <div className="field-row">
                                 <span className="field-label">Guía de Aprendizaje:</span>
@@ -437,7 +444,7 @@ const CourseDetails = ({ advisorId, courseId, filter }) => {
 
                     {expandedSections.module_2 && (
                         <div className="section-content">
-                                                                                                                <h3>Módulo 2</h3>
+                            <h3>Módulo 2</h3>
 
                             <div className="field-row">
                                 <span className="field-label">Guía de Aprendizaje:</span>
@@ -467,7 +474,7 @@ const CourseDetails = ({ advisorId, courseId, filter }) => {
 
                     {expandedSections.module_3 && (
                         <div className="section-content">
-                                                                                                                <h3>Módulo 3</h3>
+                            <h3>Módulo 3</h3>
 
                             <div className="field-row">
                                 <span className="field-label">Guía de Aprendizaje:</span>
@@ -497,7 +504,7 @@ const CourseDetails = ({ advisorId, courseId, filter }) => {
 
                     {expandedSections.module_4 && (
                         <div className="section-content">
-                                                                                                                <h3>Módulo 4</h3>
+                            <h3>Módulo 4</h3>
 
                             <div className="field-row">
                                 <span className="field-label">Guía de Aprendizaje:</span>
@@ -527,7 +534,7 @@ const CourseDetails = ({ advisorId, courseId, filter }) => {
 
                     {expandedSections.closing && (
                         <div className="section-content">
-                                                                                                                <h3>Cierre</h3>
+                            <h3>Cierre</h3>
 
                             <div className="field-row">
                                 <span className="field-label">Actividades de Cierre:</span>
