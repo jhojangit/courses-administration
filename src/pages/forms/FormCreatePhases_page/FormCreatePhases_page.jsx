@@ -8,6 +8,7 @@ import FormCreateModuleThree from '../../../components/forms/formCreateModuleThr
 import FormCreateModuleFour from '../../../components/forms/formCreateModuleFour/FormCreateModuleFour';
 import FormClosing from '../../../components/forms/formClosing/FormClosing';
 import { useParams } from 'react-router-dom';
+import Notification from '../../../components/notification/Notification';
 
 
 
@@ -65,7 +66,8 @@ const FormCreatePhasesPage = () => {
     });
 
 
-    const [message, setMessage] = useState('');
+    const [messageOK, setMessageOK] = useState('');
+    const [messageBad, setMessageBad] = useState('');
 
     const courseName = courses.filter(course => course.id == id)
 
@@ -313,22 +315,23 @@ const FormCreatePhasesPage = () => {
 
         if (planningError || startError || moduleOneError || moduleTwoError || moduleThreeError || moduleFourError || closingError) {
             console.error('Error al guardar los registros:', planningError || startError || moduleOneError || moduleTwoError || moduleThreeError || moduleFourError || closingError);
-            setMessage('Error al guardar los registros.');
+            setMessageBad('Error registrando los datos.');
         } else {
-            setMessage('Registros guardados exitosamente.');
-            setTimeout(() => setMessage(''), 4000);
+            setMessageOK('Registros guardados exitosamente.');
+            setTimeout(() => {
+                setMessageOK('');
+                setMessageBad('');
+            }, 4000);
         }
     };
 
 
 
     return (
-        <div className="form-page-container">
+        <div className="form-page-container-phases">
 
 
             <h1>{courseName[0]?.name}</h1>
-
-            <h2 className="form-title">Crear / Editar </h2>
 
             {courseId && (
                 <>
@@ -369,11 +372,29 @@ const FormCreatePhasesPage = () => {
                 </>
             )}
 
-            <button onClick={handleSubmit} className="submit-button">
-                Guardar / Actualizar
+            <button onClick={handleSubmit} className="submit-button-phases">
+                Guardar
             </button>
 
-            {message && <p className="form-message">{message}</p>}
+
+            {
+                messageOK 
+                    && 
+                    <Notification 
+                        message={messageOK} 
+                        type={"success"} 
+                    />
+            }
+
+            {
+                messageBad 
+                    && 
+                    <Notification 
+                        message={messageBad} 
+                        type={"error"} 
+                    />
+            }
+
         </div>
     );
 };

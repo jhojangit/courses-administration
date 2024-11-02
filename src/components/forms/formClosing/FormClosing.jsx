@@ -8,10 +8,10 @@ const FormClosing = ({ closingData, onClosingChange }) => {
     };
 
     return (
-        <form className="form">
+        <form className="form-phases">
             <h3>CIERRE</h3>
 
-            <div className="form-group">
+            <div className="form-group-phases">
                 <label htmlFor="actividades_cierre">Actividades de cierre</label>
                 <input
                     type="text"
@@ -22,7 +22,7 @@ const FormClosing = ({ closingData, onClosingChange }) => {
                     required
                 />
             </div>
-            <div className="form-group">
+            <div className="form-group-phases">
                 <label htmlFor="evaluacion_percepcion">Evaluación de percepción</label>
                 <input
                     type="text"

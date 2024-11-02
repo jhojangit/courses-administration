@@ -69,7 +69,7 @@ const FormCreateAdvisor = () => {
                     && 
                     <Notification 
                         message={messageOK} 
-                        type={"succes"} 
+                        type={"success"} 
                     />
             }
 

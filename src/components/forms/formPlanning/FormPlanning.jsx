@@ -5,9 +5,9 @@ const FormPlanning = ({ planningData, onPlanningChange }) => {
     };
 
     return (
-        <form className="form">
+        <form className="form-phases">
             <h3>PLANEACIÓN</h3>
-            <div className="form-group">
+            <div className="form-group-phases">
                 <label htmlFor="acta_de_inicio">Acta de Inicio</label>
                 <input
                     type="text"
@@ -18,7 +18,7 @@ const FormPlanning = ({ planningData, onPlanningChange }) => {
                     required
                 />
             </div>
-            <div className="form-group">
+            <div className="form-group-phases">
                 <label htmlFor="matriz_de_coherencia">Matriz de Coherencia</label>
                 <input
                     type="text"
@@ -29,7 +29,7 @@ const FormPlanning = ({ planningData, onPlanningChange }) => {
                     required
                 />
             </div>
-            <div className="form-group">
+            <div className="form-group-phases">
                 <label htmlFor="diseño_instruccional">Diseño Instruccional</label>
                 <input
                     type="text"

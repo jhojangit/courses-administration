@@ -8,10 +8,10 @@ const FormStart = ({ startData, onStartChange }) => {
     };
 
     return (
-        <form className="form">
+        <form className="form-phases">
             <h3>SECCIÓN DE INICIO</h3>
 
-            <div className="form-group">
+            <div className="form-group-phases">
                 <label htmlFor="banner">Banner</label>
                 <input
                     type="text"
@@ -22,7 +22,7 @@ const FormStart = ({ startData, onStartChange }) => {
                     required
                 />
             </div>
-            <div className="form-group">
+            <div className="form-group-phases">
                 <label htmlFor="caratulas">Carátulas</label>
                 <input
                     type="text"
@@ -33,7 +33,7 @@ const FormStart = ({ startData, onStartChange }) => {
                     required
                 />
             </div>
-            <div className="form-group">
+            <div className="form-group-phases">
                 <label htmlFor="presentacion_docente">Presentación Docente</label>
                 <input
                     type="text"
@@ -44,7 +44,7 @@ const FormStart = ({ startData, onStartChange }) => {
                     required
                 />
             </div>
-            <div className="form-group">
+            <div className="form-group-phases">
                 <label htmlFor="presentacion_curso">Presentación Curso</label>
                 <input
                     type="text"
@@ -55,7 +55,7 @@ const FormStart = ({ startData, onStartChange }) => {
                     required
                 />
             </div>
-            <div className="form-group">
+            <div className="form-group-phases">
                 <label htmlFor="acuerdos">Acuerdos</label>
                 <input
                     type="text"
@@ -66,7 +66,7 @@ const FormStart = ({ startData, onStartChange }) => {
                     required
                 />
             </div>
-            <div className="form-group">
+            <div className="form-group-phases">
                 <label htmlFor="cronograma">Cronograma</label>
                 <input
                     type="text"
@@ -77,7 +77,7 @@ const FormStart = ({ startData, onStartChange }) => {
                     required
                 />
             </div>
-            <div className="form-group">
+            <div className="form-group-phases">
                 <label htmlFor="normas_citacion">Normas de Citación</label>
                 <input
                     type="text"
@@ -88,7 +88,7 @@ const FormStart = ({ startData, onStartChange }) => {
                     required
                 />
             </div>
-            <div className="form-group">
+            <div className="form-group-phases">
                 <label htmlFor="diagnostico">Diagnóstico</label>
                 <input
                     type="text"
@@ -99,7 +99,7 @@ const FormStart = ({ startData, onStartChange }) => {
                     required
                 />
             </div>
-            <div className="form-group">
+            <div className="form-group-phases">
                 <label htmlFor="en_aula">En Aula</label>
                 <input
                     type="text"
@@ -110,7 +110,7 @@ const FormStart = ({ startData, onStartChange }) => {
                     required
                 />
             </div>
-            <div className="form-group">
+            <div className="form-group-phases">
                 <label htmlFor="url_aula">URL Aula</label>
                 <input
                     type="text"

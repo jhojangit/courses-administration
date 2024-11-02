@@ -82,7 +82,7 @@ const FormDeleteCourse = () => {
                     && 
                     <Notification 
                         message={messageOK} 
-                        type={"succes"} 
+                        type={"success"} 
                     />
             }
 

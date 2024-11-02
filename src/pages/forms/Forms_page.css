@@ -1,41 +1,107 @@
-.form-page-container {
-    max-width: 800px;
+/* Contenedor principal de la página de formularios */
+.form-page-container-phases {
+    max-width: 1000px;
     margin: 0 auto;
-    padding-top: 20px;
+    padding: 20px;
+    background-color: var(--color-background-light);
     border-radius: 10px;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-    width: 100%;
-    text-align: center;
-}
-
-.form-page-buttons {
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    padding-bottom: 3rem;
     display: flex;
-    gap: 10px;
-    margin-bottom: 20px;
-    margin-top: 20px;
-    align-items: center;
-    justify-content: center;
+    flex-direction: column;
 }
 
-.form-page-buttons button {
-    width: 110px;
+/* Título principal */
+.form-page-container-phases h1 {
+    font-size: 2em;
+    font-weight: bold;
+    color: var(--color-text);
+    text-align: center;
+    margin-bottom: 15px;
+    margin-top: 2rem;
 }
 
-.form-page-toggle-button {
-    padding: 8px 12px;
-    font-size: 16px;
-    cursor: pointer;
-    border: none;
-    border-radius: 4px;
-    background-color: var(--color-text);
+/* Contenedor de cada fase */
+.form-page-container-phases > div {
+    margin-bottom: 15px; /* Reducido para menos espacio vertical */
+    padding: 15px;
+    background-color: var(--color-section-bg);
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.form-page-container-phases > div:hover {
+    transform: scale(1.02);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+}
+
+/* Estilo de cada formulario dentro de cada fase */
+.form-phases {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    padding: 15px;
+    background-color: var(--color-primary);
+    border-radius: 8px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
     transition: background-color 0.3s;
+    border-top: 1px solid rgba(255, 255, 255, 0.336);
+    margin-top: 2rem;
 }
 
-.form-page-toggle-button.active {
-    background-color: var(--color-primary-contrast);
-    color: white;
+/* Título de cada fase */
+.form-phases h3 {
+    font-size: 1.5em;
+    font-weight: bold;
+    color: var(--color-text);
+    margin-bottom: 10px;
+    text-align: left;
+}
+
+/* Grupos de campos de formulario en columnas */
+.form-group-phases {
+    display: flex;
+    flex-direction: column;
+    gap: 8px; /* Reducido */
+}
+
+.form-group-phases label {
+    font-weight: bold;
+    color: var(--color-text-dark);
+    font-size: 0.9em;
+}
+
+/* Configura el ancho de los inputs para dos o tres columnas */
+.form-group-phases input {
+    padding: 8px; /* Reducido */
+    font-size: 1em;
+    color: var(--color-text-dark);
+    background-color: var(--color-input-bg);
     border: 1px solid var(--color-border);
+    border-radius: 5px;
+    transition: border-color 0.3s;
 }
 
+/* Ajuste para mostrar dos o tres campos por fila en pantallas grandes */
+.form-phases .form-group-phases {
+    flex-direction: row;
+    gap: 10px;
+}
 
+.form-group-phases label, .form-group-phases input {
+    flex: 1; /* Cada campo ocupará la mitad de la fila */
+}
 
+/* Resaltado al hacer foco en el campo */
+.form-group-phases input:focus {
+    border-color: var(--color-primary);
+    outline: none;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+}
+
+.submit-button-phases{
+    margin-top: 2rem;
+    width: 50%;
+    align-self: center;
+}

@@ -79,7 +79,7 @@ const FormDeleteProgram = () => {
                     && 
                     <Notification 
                         message={messageOK} 
-                        type={"succes"} 
+                        type={"success"} 
                     />
             }
 

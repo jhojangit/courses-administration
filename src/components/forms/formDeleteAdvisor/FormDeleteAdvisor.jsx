@@ -76,7 +76,7 @@ const FormDeleteAdvisor = () => {
                     && 
                     <Notification 
                         message={messageOK} 
-                        type={"succes"} 
+                        type={"success"} 
                     />
             }
 

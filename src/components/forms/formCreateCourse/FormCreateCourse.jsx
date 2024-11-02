@@ -200,7 +200,7 @@ const FormCreateCourse = () => {
                 <button type="submit">Crear Curso</button>
             </form>
 
-            {messageOK && <Notification message={messageOK} type={"succes"} />}
+            {messageOK && <Notification message={messageOK} type={"success"} />}
             {messageBad && <Notification message={messageBad} type={"error"} />}
         </div>
     );

@@ -11,11 +11,11 @@ const FormCreateModuleThree = ({ moduleThreeData, onModuleThreeChange }) => {
     };
 
     return (
-        <form className="form">
+        <form className="form-phases">
             <h3>MÓDULO 3</h3>
 
             {/* Campo: Guía de Aprendizaje */}
-            <div className="form-group">
+            <div className="form-group-phases">
                 <label htmlFor="guia_aprendizaje">Guía de Aprendizaje</label>
                 <input
                     type="text"
@@ -28,7 +28,7 @@ const FormCreateModuleThree = ({ moduleThreeData, onModuleThreeChange }) => {
             </div>
 
             {/* Campo: Recursos Externos */}
-            <div className="form-group">
+            <div className="form-group-phases">
                 <label htmlFor="recursos_externos">Recursos Externos</label>
                 <input
                     type="text"
@@ -41,7 +41,7 @@ const FormCreateModuleThree = ({ moduleThreeData, onModuleThreeChange }) => {
             </div>
 
             {/* Campo: Recursos Propios */}
-            <div className="form-group">
+            <div className="form-group-phases">
                 <label htmlFor="recursos_propios">Recursos Propios</label>
                 <input
                     type="text"
@@ -54,7 +54,7 @@ const FormCreateModuleThree = ({ moduleThreeData, onModuleThreeChange }) => {
             </div>
 
             {/* Campo: Actividades */}
-            <div className="form-group">
+            <div className="form-group-phases">
                 <label htmlFor="actividades">Actividades</label>
                 <input
                     type="text"
@@ -67,7 +67,7 @@ const FormCreateModuleThree = ({ moduleThreeData, onModuleThreeChange }) => {
             </div>
 
             {/* Campo: Rúbricas */}
-            <div className="form-group">
+            <div className="form-group-phases">
                 <label htmlFor="rubricas">Rúbricas</label>
                 <input
                     type="text"
@@ -80,7 +80,7 @@ const FormCreateModuleThree = ({ moduleThreeData, onModuleThreeChange }) => {
             </div>
 
             {/* Campo: Evaluación */}
-            <div className="form-group">
+            <div className="form-group-phases">
                 <label htmlFor="evaluacion">Evaluación</label>
                 <input
                     type="text"

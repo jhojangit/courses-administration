@@ -178,7 +178,7 @@ const FormUpdateProgram = () => {
                     && 
                     <Notification 
                         message={messageOK} 
-                        type={"succes"} 
+                        type={"success"} 
                     />
             }
 

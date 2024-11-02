@@ -85,7 +85,7 @@ const FormCreateFaculty = () => {
                     && 
                     <Notification 
                         message={messageOK} 
-                        type={"succes"} 
+                        type={"success"} 
                     />
             }
 

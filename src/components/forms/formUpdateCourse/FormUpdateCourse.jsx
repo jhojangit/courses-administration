@@ -235,7 +235,7 @@ const FormUpdateCourse = () => {
                     && 
                     <Notification 
                         message={messageOK} 
-                        type={"succes"} 
+                        type={"success"} 
                     />
             }
 
